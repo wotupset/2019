@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -46,6 +46,22 @@ function poi2(){
  	console.log('poi2');
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function(){
+	switch(this.readyState){
+		case 1:
+			console.log(this.readyState,'服务器连接已建立');
+			break;
+		case 2:
+			console.log(this.readyState,'请求已接收');
+			break;
+		case 3:
+			console.log(this.readyState,'请求处理中');
+			break;
+		case 4:
+			console.log(this.readyState,'请求已完成，且响应已就绪');
+			break;
+		default:
+			console.log('default:');
+	}
     if (this.readyState == 4 && this.status == 200){
       //img.src = url.createObjectURL(this.response);
     	console.log('ok');
