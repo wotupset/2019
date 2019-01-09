@@ -2,6 +2,9 @@
 
 https://wotupset.github.io/2019/
 
+https://wotupset.github.io/2019/190109/
+
+
 # 第一次吃罐罐就上手
 
 休閒好友加太多了
