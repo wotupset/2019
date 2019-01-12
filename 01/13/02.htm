@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+
+<meta property="og:title" content="標題"/>
+<meta property="og:description" content="描述"/>
+<meta property="og:image" content="http://ram.komica2.net/00/thumb/1546848349332s.jpg"/>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	var str='[ドメスティックな彼女] 第1話';
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
+	console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+
+function poi2(){
+var str=`
+
+190113+3 (1).jpg
+190113+3 (10).jpg
+190113+3 (11).jpg
+190113+3 (12).jpg
+190113+3 (13).jpg
+190113+3 (14).jpg
+190113+3 (15).jpg
+190113+3 (16).jpg
+190113+3 (17).jpg
+190113+3 (18).jpg
+190113+3 (2).jpg
+190113+3 (3).jpg
+190113+3 (4).jpg
+190113+3 (5).jpg
+190113+3 (6).jpg
+190113+3 (7).jpg
+190113+3 (8).jpg
+190113+3 (9).jpg
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		//console.log(element.length);
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var img = new Image();
+img.src = input_var;
+//img.setAttribute("crossOrigin",'Anonymous')
+
+img.onload = function(e){
+	//console.log(e);
+    var c = document.createElement('canvas');
+	var ctx = c.getContext('2d');
+	c.width = 1280+2;
+	c.height = 720+2;
+	ctx.drawImage(img,0,0, c.width , c.height );//
+	var img_new = c.toDataURL("image/jpeg");
+	//console.log( img_new );
+
+    var newimg = document.createElement('img');
+	newimg.src=img_new;
+	
+
+	var bb=document.querySelector("body");
+	bb.appendChild(newimg);
+
+};
+
+  
+}
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
