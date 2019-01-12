@@ -24,9 +24,9 @@ body{}
 document.addEventListener("DOMContentLoaded",function(e){
 	console.log( "DOMContentLoaded" );
 	var bb=document.querySelector("body");
-  var str='<h1>[かぐや様は告らせたい] 第1話</h1>';
-	bb.insertAdjacentHTML('beforeend', str);
-  document.title=str;
+	var str='[かぐや様は告らせたい] 第1話';
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
 	console.log(bb);
 });
 
