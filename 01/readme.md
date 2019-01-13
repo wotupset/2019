@@ -5,5 +5,7 @@ https://wotupset.github.io/2019/190112/01.htm [かぐや様は告らせたい] �
 
 https://wotupset.github.io/2019/01/13/01.htm
 
-https://wotupset.github.io/2019/01/13/02.htm
+https://wotupset.github.io/2019/01/13/02.htm [ドメスティックな彼女] 第1話
+
+https://wotupset.github.io/2019/01/13/03.htm
 
