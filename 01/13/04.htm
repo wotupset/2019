@@ -104,7 +104,8 @@ img.onload = function(e){
 	//console.log(e);
 	var imgw=$(img).prop('naturalWidth');
 	var imgh=$(img).prop('naturalHeight');
-	console.log( imgw,imgh );//naturalHeight
+	//console.log( imgw,imgh );//naturalHeight
+	console.log(img.src);
 	if(  imgw>0 && imgh>0  ){
 		var c = document.createElement('canvas');
 		var ctx = c.getContext('2d');
@@ -120,9 +121,11 @@ img.onload = function(e){
 	}else{
 		console.log('錯誤wh'+img.src);
 		//throw 
-	}
-};
-
+	}//if
+};//img.onload
+img.onerror=function(e){
+	console.log('img.onerror'+img.src);
+};//img.onerror
   
 }//poi
 
