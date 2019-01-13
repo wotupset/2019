@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded",function(e){
 $(function(){});
 $(()=>{
 	console.log('jq');
-  //
-  $.gg=[];
-  //
-  //poi();
-  poi2();
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	//
+	//poi();
+	poi2();
 });
 
 function poi2(){
@@ -92,17 +93,18 @@ DwuUY56VAAAZG35_orig.jpg
 		poi(''+element);
 	});
 
-	console.log(str);
+	//console.log(str);
 	//poi();
 }
 function poi(input_var){
-	var img = new Image();
+	//var img = new Image();
+	var img = document.createElement('img')
 	img.src = input_var;
 	//img.setAttribute("crossOrigin",'Anonymous')
+	//console.log( img.src );
 
 	img.onload = function(e){
-		//console.log(e);
-		console.log( img.src );
+		console.log(e);
 		var imgw=$(img).prop('naturalWidth');
 		var imgh=$(img).prop('naturalHeight');
 		console.log( imgw,imgh );//naturalHeight
