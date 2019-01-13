@@ -96,37 +96,37 @@ DwuUY56VAAAZG35_orig.jpg
 	//poi();
 }
 function poi(input_var){
-var img = new Image();
-img.src = input_var;
-//img.setAttribute("crossOrigin",'Anonymous')
-	
-img.onload = function(e){
-	//console.log(e);
-	var imgw=$(img).prop('naturalWidth');
-	var imgh=$(img).prop('naturalHeight');
-	//console.log( imgw,imgh );//naturalHeight
-	console.log(img.src);
-	if(  imgw>0 && imgh>0  ){
-		var c = document.createElement('canvas');
-		var ctx = c.getContext('2d');
-		c.width = 1280+2;
-		c.height = 720+2;
-		ctx.drawImage(img,0,0, c.width , c.height );//
-		var img_new = c.toDataURL("image/jpeg");
-		//console.log( img_new );
-		var newimg = document.createElement('img');
-		newimg.src=img_new;
-		var bb=document.querySelector("body");
-		bb.appendChild(newimg);
-	}else{
-		console.log('錯誤wh'+img.src);
-		//throw 
-	}//if
-};//img.onload
-img.onerror=function(e){
-	console.log('img.onerror'+img.src);
-};//img.onerror
-  
+	var img = new Image();
+	img.src = input_var;
+	//img.setAttribute("crossOrigin",'Anonymous')
+
+	img.onload = function(e){
+		//console.log(e);
+		console.log( img.src );
+		var imgw=$(img).prop('naturalWidth');
+		var imgh=$(img).prop('naturalHeight');
+		console.log( imgw,imgh );//naturalHeight
+		if(  imgw>0 && imgh>0  ){
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 1280+2;
+			c.height = 720+2;
+			ctx.drawImage(img,0,0, c.width , c.height );//
+			var img_new = c.toDataURL("image/jpeg");
+			//console.log( img_new );
+			var newimg = document.createElement('img');
+			newimg.src=img_new;
+			var bb=document.querySelector("body");
+			bb.appendChild(newimg);
+		}else{
+			console.log('錯誤wh'+img.src);
+			//throw 
+		}//if
+	};//img.onload
+	img.onerror=function(e){
+		console.log('img.onerror'+img.src);
+	};//img.onerror
+
 }//poi
 
 </script>
