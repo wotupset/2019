@@ -11,4 +11,4 @@ https://wotupset.github.io/2019/01/13/03.htm
 
 https://wotupset.github.io/2019/01/13/04.htm [えんどろ〜] 第1話
 
-https://wotupset.github.io/2019/01/14/01.htm
+https://wotupset.github.io/2019/01/14/01.htm [Deep One] 比奈森沙耶
