@@ -1,7 +1,8 @@
 # 2019
 ## 01
-
+### 12
 https://wotupset.github.io/2019/190112/01.htm [かぐや様は告らせたい] 第1話
+### 13
 
 https://wotupset.github.io/2019/01/13/01.htm
 
@@ -10,5 +11,12 @@ https://wotupset.github.io/2019/01/13/02.htm [ドメスティックな彼女] �
 https://wotupset.github.io/2019/01/13/03.htm
 
 https://wotupset.github.io/2019/01/13/04.htm [えんどろ〜] 第1話
+### 14
 
 https://wotupset.github.io/2019/01/14/01.htm [Deep One] 比奈森沙耶
+
+https://wotupset.github.io/2019/01/14/02.htm [上野さんは不器用] 第2話
+
+
+https://wotupset.github.io/2019/01/14/03.htm ゲゲゲの鬼太郎(2018) #39 「雪女純白恋愛白書」
+
