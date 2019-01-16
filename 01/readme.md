@@ -20,3 +20,8 @@ https://wotupset.github.io/2019/01/14/02.htm [上野さんは不器用] 第2話
 
 https://wotupset.github.io/2019/01/14/03.htm ゲゲゲの鬼太郎(2018) #39 「雪女純白恋愛白書」
 
+### 16
+
+https://wotupset.github.io/2019/01/16/01.htm [動畫截圖]天使降臨到我身邊！ [02]
+
+
