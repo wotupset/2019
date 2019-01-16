@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+
+<meta property="og:title" content="標題"/>
+<meta property="og:description" content="描述"/>
+<meta property="og:image" content="https://i.imgur.com/ql6mO8W.png"/>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	var str='[動畫截圖]天使降臨到我身邊！ [02]';
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
+	console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	//
+	//poi();
+	poi2();
+});
+
+function poi2(){
+
+var str=`
+
+
+1547561034-0164-009.jpg
+1547561034-0167-005.jpg
+1547561034-0239-006.jpg
+1547561034-0347-003.jpg
+1547561034-0347-004.jpg
+1547561034-0347-005.jpg
+1547561034-0388-004.jpg
+1547561034-0388-007.jpg
+1547561034-0563-005.jpg
+1547561034-0574-001.jpg
+1547561034-0645-004.jpg
+1547561034-0969-001.jpg
+1547561034-0969-003.jpg
+1547561034-0969-008.jpg
+1547561041-0056-010.jpg
+1547561041-0087-002.jpg
+1547561041-0087-004.jpg
+1547561041-0087-007.jpg
+1547561041-0140-001.jpg
+1547561041-0140-003.jpg
+1547561041-0140-005.jpg
+1547561041-0279-006.jpg
+1547561041-0333-002.jpg
+1547561041-0333-009.jpg
+1547561041-0403-002.jpg
+1547561041-0508-006.jpg
+1547561041-0867-002.jpg
+1547561041-0991-002.jpg
+1547561047-0404-009.jpg
+1547561047-0531-001.jpg
+1547561047-0531-003.jpg
+1547561047-0628-013.jpg
+1547561047-0962-002.jpg
+1547561047-0962-007.jpg
+1547562522-0100-002.jpg
+1547562522-0100-004.jpg
+1547562522-0100-007.jpg
+1547562522-0703-007.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_15.43.231.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_16.09.687.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_17.27.536.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_17.32.197.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_17.33.009.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_17.34.340.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_17.34.660.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_18.58.150.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_19.35.042.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_19.59.081.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_20.02.090.jpg
+[Ohys-Raws] Watashi ni Tenshi ga Maiorita! - 02 (AT-X 1280x720 x264 AAC).mp4_snapshot_20.12.890.jpg
+
+
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		//console.log(element.length);
+		poi(''+element);
+	});
+
+	//console.log(str);
+	//poi();
+}
+function poi(input_var){
+	//var img = new Image();
+	var img = document.createElement('img')
+	img.src = input_var;
+	//img.setAttribute("crossOrigin",'Anonymous')
+	//console.log( img.src );
+
+	img.onload = function(e){
+		console.log(e);
+		var imgw=$(img).prop('naturalWidth');
+		var imgh=$(img).prop('naturalHeight');
+		console.log( imgw,imgh );//naturalHeight
+		if(  imgw>0 && imgh>0  ){
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 1920+2;
+			c.height = 1080+2;
+			ctx.drawImage(img,0,0, c.width , c.height );//
+			var img_new = c.toDataURL("image/jpeg");
+			//console.log( img_new );
+			var newimg = document.createElement('img');
+			newimg.src=img_new;
+			var bb=document.querySelector("body");
+			bb.appendChild(newimg);
+		}else{
+			console.log('錯誤wh'+img.src);
+			//throw 
+		}//if
+	};//img.onload
+	img.onerror=function(e){
+		console.log('img.onerror'+img.src);
+	};//img.onerror
+
+}//poi
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
