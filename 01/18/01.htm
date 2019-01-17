@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+
+<meta property="og:title" content="標題"/>
+<meta property="og:description" content="描述"/>
+<meta property="og:image" content="https://i.imgur.com/ql6mO8W.png"/>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	var str=`
+  ガーリー・エアフォース 第2話 アーニャさん200追加「コマツ・ランデブー」
+  `;
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
+	console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	//
+	//poi();
+	poi2();
+});
+
+function poi2(){
+
+var str=`
+
+04083867.jpg
+05277719.jpg
+10311275.jpg
+1547734401-0105-002.jpg
+1547739788986.jpg
+1547739789255.jpg
+190118-0036190216-1440x810.jpg
+190118-0037380463-1440x810.jpg
+190118-0037470876-1440x810.jpg
+190118-0037540389-1440x810.jpg
+190118-0040590435-1440x810.jpg
+190118-0043040294-1440x810.jpg
+190118-0043050969-1440x810.jpg
+190118-0043060989-1440x810.jpg
+190118-0047430372-1440x810.jpg
+23397429.jpg
+30930630.jpg
+31529434.jpg
+41713213.jpg
+42399514.jpg
+48557370.jpg
+54159230.jpg
+55870044.jpg
+69232811.jpg
+71912315.jpg
+72399483.jpg
+92522717.jpg
+94296619.jpg
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		//console.log(element.length);
+		poi(''+element);
+	});
+
+	//console.log(str);
+	//poi();
+}
+function poi(input_var){
+	//var img = new Image();
+	var img = document.createElement('img')
+	img.src = input_var;
+	//img.setAttribute("crossOrigin",'Anonymous')
+	//console.log( img.src );
+
+	img.onload = function(e){
+		//console.log(e);
+		($.gg.cc++);
+		console.log( $.gg.cc );
+		var imgw=$(img).prop('naturalWidth');
+		var imgh=$(img).prop('naturalHeight');
+		console.log( imgw,imgh );//naturalHeight
+		if(  imgw>0 && imgh>0  ){
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 1920+2;
+			c.height = 1080+2;
+			ctx.drawImage(img,0,0, c.width , c.height );//
+			var img_new = c.toDataURL("image/jpeg");
+			//console.log( img_new );
+			var newimg = document.createElement('img');
+			newimg.src=img_new;
+			var bb=document.querySelector("body");
+			bb.appendChild(newimg);
+		}else{
+			console.log('錯誤wh'+img.src);
+			//throw 
+		}//if
+	};//img.onload
+	img.onerror=function(e){
+		console.log('img.onerror'+img.src);
+	};//img.onerror
+
+}//poi
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
