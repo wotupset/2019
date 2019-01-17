@@ -150,12 +150,15 @@ function poi(input_var){
 			var bb=document.querySelector("body");
 			bb.appendChild(newimg);
 		}else{
-			console.log('錯誤wh'+img.src);
+			console.log('錯誤的wh');
+			console.log(img.src);
 			//throw 
 		}//if
 	};//img.onload
 	img.onerror=function(e){
-		console.log('img.onerror'+img.src);
+		console.log('img.onerror');
+		console.log();
+		console.log(img.src);
 	};//img.onerror
 
 }//poi
