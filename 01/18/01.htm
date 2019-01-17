@@ -108,8 +108,8 @@ function poi(input_var){
 		if(  imgw>0 && imgh>0  ){
 			var c = document.createElement('canvas');
 			var ctx = c.getContext('2d');
-			c.width = 1920+2;
-			c.height = 1080+2;
+			c.width = 1280+2;
+			c.height = 720+2;
 			ctx.drawImage(img,0,0, c.width , c.height );//
 			var img_new = c.toDataURL("image/jpeg");
 			//console.log( img_new );
