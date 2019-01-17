@@ -25,3 +25,6 @@ https://wotupset.github.io/2019/01/14/03.htm ゲゲゲの鬼太郎(2018) #39 「
 https://wotupset.github.io/2019/01/16/01.htm [動畫截圖]天使降臨到我身邊！ [02]
 
 
+### 18
+https://wotupset.github.io/2019/01/18/01.htm ガーリー・エアフォース 第2話
+
