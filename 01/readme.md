@@ -32,3 +32,6 @@ https://wotupset.github.io/2019/01/18/02.htm 盾之勇者成名錄 [02]
 
 https://wotupset.github.io/2019/01/18/03.htm 五等分的新娘 [02]
 
+https://wotupset.github.io/2019/01/18/03b.htm 五等分的新娘 [02] -2
+
+https://wotupset.github.io/2019/01/18/033.htm 五等分的新娘 [02] -3
