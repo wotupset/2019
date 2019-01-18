@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+
+<meta property="og:title" content="標題"/>
+<meta property="og:description" content="描述"/>
+<meta property="og:image" content="https://i.imgur.com/ql6mO8W.png"/>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	var str=`
+五等分的新娘 [02]
+
+  `;
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
+	console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	//
+	//poi();
+	poi2();
+});
+
+function poi2(){
+
+var str=`
+
+1.txt
+1547769062870.jpg
+1547769104000.jpg
+Dwot9gZUYAAGdvv_orig.jpg
+DxHCtyMVYAAh58F_orig.jpg
+DxIAZztVAAAxPXL_orig.jpg
+DxIGD7KV4AA7BvS_orig.jpg
+DxIHtVYU8AAm0rb_orig.jpg
+DxIHvK1UwAAgYEp_orig.jpg
+DxIHYhQV4AACgp5_orig.jpg
+DxIJJhYU0AA2wj__orig.jpg
+DxIJKTzU0AATTN9_orig.jpg
+DxIKfTCUwAA2Djy_orig.jpg
+DxIKirvU0AUXimb_orig.jpg
+DxIKj1jUwAEwU0A_orig.jpg
+DxIKjljV4AA0hGS_orig.jpg
+DxIKjYGVsAAr_eQ_orig.jpg
+DxIKmxXU0AAVqSK_orig.jpg
+DxIKnYcU0AEMlJ3_orig.jpg
+DxILae-UwAEHtno_orig.jpg
+DxILf94VYAA_aAp_orig.jpg
+DxILnVIU8AEiHdp_orig.jpg
+DxIMaabU0AA4Lui_orig.jpg
+DxIMaiKVYAAWIVG_orig.jpg
+DxIMaS2VYAIUZIh_orig.jpg
+DxIMg9rUUAAiftf_orig.jpg
+DxIMhFGU8AAdWhw_orig.jpg
+DxIMhNSU8AAqO0T_orig.jpg
+DxIMhUmV4AASTa7_orig.jpg
+DxIMirYU0AAQQIH_orig.jpg
+DxIMnkBVAAEYgGo_orig.jpg
+DxIMXlqUUAIbBt5_orig.jpg
+DxIMXlqVsAAvW56_orig.jpg
+DxIMy84VYAAaUBD_orig.jpg
+DxINLWmVYAAVh7I_orig.jpg
+DxISZgtVsAAt62D_orig.jpg
+新增文字文件.txt.bat
+
+
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		//console.log(element.length);
+		poi(''+element);
+	});
+
+	//console.log(str);
+	//poi();
+}
+function poi(input_var){
+	//var img = new Image();
+	var img = document.createElement('img')
+	img.src = input_var;
+	//img.setAttribute("crossOrigin",'Anonymous')
+	//console.log( img.src );
+
+	img.onload = function(e){
+		//console.log(e);
+		($.gg.cc++);
+		console.log( $.gg.cc );
+		var imgw=$(img).prop('naturalWidth');
+		var imgh=$(img).prop('naturalHeight');
+		console.log( imgw,imgh );//naturalHeight
+		if(  imgw>0 && imgh>0  ){
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 1280+2;
+			c.height = 720+2;
+			ctx.drawImage(img,0,0, c.width , c.height );//
+			var img_new = c.toDataURL("image/jpeg");
+			//console.log( img_new );
+			var newimg = document.createElement('img');
+			newimg.src=img_new;
+			var bb=document.querySelector("body");
+			bb.appendChild(newimg);
+		}else{
+			console.log('錯誤的wh');
+			console.log(img.src);
+			//throw 
+		}//if
+	};//img.onload
+	img.onerror=function(e){
+		console.log('img.onerror');
+		console.log(e);
+		console.log(img.src);
+	};//img.onerror
+
+}//poi
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
