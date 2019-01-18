@@ -43,7 +43,7 @@ document.addEventListener("readystatechange",function(e){
 		網路上收集的圖片
 		遇到喜歡的會放在這邊
 		`;
-		bb.insertAdjacentHTML('afterend', '<h3>'+str+'</h3>');
+		bb.insertAdjacentHTML('afterend', '<pre>'+str+'</pre>');
 	}
 });
 
@@ -183,7 +183,7 @@ function poi(input_var){
 	};//img.onload
 	img.onerror=function(e){
 		console.log('img.onerror');
-		console.log(e);
+		//console.log(e);
 		console.log(img.src);
 	};//img.onerror
 
