@@ -32,16 +32,22 @@ document.addEventListener("DOMContentLoaded",function(e){
 	console.log(bb);
 });
 
-document.addEventListener("load",function(e){
-	console.log( "load" );
-	var bb=document.querySelector("h1");
-var str=`
-網路上收集的圖片
-`;
-	bb.insertAdjacentHTML('afterend', '<pre>'+str+'</pre>');
-	console.log(bb);
+document.addEventListener("readystatechange",function(e){
+	console.log( "readystatechange" );
+	//console.log( e );
+	//console.log( document.readyState );
+	if(document.readyState === "complete"){
+		console.log( 'complete' );
+		var bb=document.querySelector("h1");
+		var str=`
+		網路上收集的圖片
+		遇到喜歡的會放在這邊
+		`;
+		bb.insertAdjacentHTML('afterend', '<h3>'+str+'</h3>');
+	}
 });
 
+	
 
 $(function(){});
 $(()=>{
