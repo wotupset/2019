@@ -28,3 +28,7 @@ https://wotupset.github.io/2019/01/16/01.htm [動畫截圖]天使降臨到我身
 ### 18
 https://wotupset.github.io/2019/01/18/01.htm ガーリー・エアフォース 第2話
 
+https://wotupset.github.io/2019/01/18/02.htm 盾之勇者成名錄 [02]
+
+https://wotupset.github.io/2019/01/18/03.htm 五等分的新娘 [02]
+
