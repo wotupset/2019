@@ -35,3 +35,11 @@ https://wotupset.github.io/2019/01/18/03.htm 五等分的新娘 [02]
 https://wotupset.github.io/2019/01/18/03b.htm 五等分的新娘 [02] -2
 
 https://wotupset.github.io/2019/01/18/033.htm 五等分的新娘 [02] -3
+
+### 23
+
+https://wotupset.github.io/2019/01/23/01.htm 《潜行的奈亚子》不被發現就不算犯罪
+
+
+
+
