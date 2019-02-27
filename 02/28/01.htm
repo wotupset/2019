@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+
+<meta property="og:title" content="標題"/>
+<meta property="og:description" content="描述"/>
+<meta property="og:image" content="https://i.imgur.com/ql6mO8W.png"/>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	var str=`
+盾之勇者成名錄 [08]
+
+
+  `;
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
+	console.log(bb);
+});
+
+document.addEventListener("readystatechange",function(e){
+	console.log( "readystatechange" );
+	//console.log( e );
+	//console.log( document.readyState );
+	if(document.readyState === "complete"){
+		console.log( 'complete' );
+		var bb=document.querySelector("h1");
+		var str=`
+動畫截圖
+
+		`;
+		bb.insertAdjacentHTML('afterend', '<pre>'+str+'</pre>');
+	}
+});
+
+	
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	//
+	//poi();
+	poi2();
+});
+
+function poi2(){
+
+var str=`
+
+D0afgzUVAAMh4vV_orig.jpg
+D0afkcgV4AAHW1D_orig.jpg
+D0afkljU8AEzBkr_orig.jpg
+D0afrd9U0AAc2m2_orig.jpg
+D0ahApGVAAAw4X7_orig.jpg
+D0ahQowUYAE6qLS_orig.jpg
+D0aiaNMU0AAWwhp_orig.jpg
+D0aiapyUUAAXEgD_orig.jpg
+D0aj7BfV4AAThk6_orig.jpg
+D0ajlpaUwAQCr-v_orig.jpg
+D0ajrhUVsAAhJyA_orig.jpg
+D0ak2ySVAAAmLFG_orig.jpg
+D0akb1AUYAAUgL__orig.jpg
+D0bj4VaVsAAoi3c_orig.jpg
+D0bj7KwU8AAtKFx_orig.jpg
+D0blGNXX0AAwHGK_orig.jpg
+D0blGOJW0AYJMOp_orig.jpg
+D0blGPoW0AEvZSK_orig.jpg
+D0bOp_4VYAA2KsR_orig.jpg
+D0bVpqtUwAA9ncC_orig.jpg
+D0bVq8iUYAUjTBz_orig.jpg
+D0bVqg2UUAAKrNw_orig.jpg
+D0bVqGZUwAA2C_v_orig.jpg
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		//console.log(element.length);
+		poi(''+element);
+	});
+
+	//console.log(str);
+	//poi();
+}
+function poi(input_var){
+	//var img = new Image();
+	var img = document.createElement('img')
+	img.src = input_var;
+	//img.setAttribute("crossOrigin",'Anonymous')
+	//console.log( img.src );
+
+	img.onload = function(e){
+		//console.log(e);
+		($.gg.cc++);
+		console.log( $.gg.cc );
+		var imgw=$(img).prop('naturalWidth');
+		var imgh=$(img).prop('naturalHeight');
+		console.log( imgw,imgh );//naturalHeight
+		if(  imgw>0 && imgh>0  ){
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 1280;
+			c.height = 720+1;
+			ctx.drawImage(img,0,0, c.width , c.height );//
+			var img_new = c.toDataURL("image/jpeg");
+			//console.log( img_new );
+			var newimg = document.createElement('img');
+			newimg.src=img_new;
+			var bb=document.querySelector("body");
+			bb.appendChild(newimg);
+		}else{
+			console.log('錯誤的wh');
+			console.log(img.src);
+			//throw 
+		}//if
+	};//img.onload
+	img.onerror=function(e){
+		console.log('img.onerror');
+		//console.log(e);
+		console.log(img.src);
+	};//img.onerror
+
+}//poi
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
