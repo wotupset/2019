@@ -35,12 +35,17 @@ function poi(){
   $("#btn_send").on('click', function(event){
     var aa=$("#input_url").val();
     console.log(aa);
-    var ww=$("#input_ww").val();
-    if(ww>0){ww=ww;}else{ww=0;}
-    ww=Math.floor(ww);
-    var hh=$("#input_hh").val();
-    if(hh>0){hh=hh;}else{hh=0;}
-    hh=Math.floor(hh);
+    
+    
+    var wh=$("#input_wh").val();
+    console.log(wh);
+    if(wh>0){}else{wh=0;}
+    wh=Math.floor(wh);
+
+    var ww=wh;
+    var hh=wh;    
+    
+    
     var img_url=''+
         'http://images2-focus-opensocial.googleusercontent.com/gadgets/proxy'+
         '?container=focus'+
@@ -67,9 +72,10 @@ function poi(){
 <form id='form01' enctype="multipart/form-data" action='' method="post" onsubmit="return false">
 <input type="text" name="input_url" id="input_url" size="20" value="http://ram.komica2.net/00/src/1551538583126.jpg">
 <br/>
-<input type="text" name="input_ww" id="input_ww" size="10" value="ww">
-x
-<input type="text" name="input_hh" id="input_hh" size="10" value="hh">
+  
+  
+wh=<input type="text" name="input_wh" id="input_wh" size="10" value="0">  
+  
 <input type="submit" name="btn_send" id="btn_send" value="送出">
 </form>
 
