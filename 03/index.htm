@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function(e){
+  console.log("DOMContentLoaded");
+});
+
+$(()=>{});
+$(function(){});
+(function(){})();
+
+
+$(document).ready(function(){
+  console.log("document ready");
+  poi();
+});
+
+
+function poi(){
+  $("#btn_send").on('click', function(event){
+    var aa=$("#input_url").val();
+    console.log(aa);
+    
+  });
+  
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<form id='form01' enctype="multipart/form-data" action='' method="post" onsubmit="return false">
+<input type="text" name="input_url" id="input_url" size="20" value="url網址">
+<input type="submit" name="btn_send" id="btn_send" value="送出">
+</form>
+
+<div id='showreslut'>
+  
+</div>
+
+
+</body>
+</html>
