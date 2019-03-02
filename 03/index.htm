@@ -10,13 +10,11 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
 <style>
 body{}
 </style>
 
 <script>
-
 
 document.addEventListener("DOMContentLoaded", function(e){
   console.log("DOMContentLoaded");
@@ -37,26 +35,48 @@ function poi(){
   $("#btn_send").on('click', function(event){
     var aa=$("#input_url").val();
     console.log(aa);
-    
+    var ww=$("#input_ww").val();
+    if(ww>0){ww=ww;}else{ww=0;}
+    ww=Math.floor(ww);
+    var hh=$("#input_hh").val();
+    if(hh>0){hh=hh;}else{hh=0;}
+    hh=Math.floor(hh);
+    var img_url=''+
+        'http://images2-focus-opensocial.googleusercontent.com/gadgets/proxy'+
+        '?container=focus'+
+        '&gadget=a'+
+        '&no_expand=1'+
+        '&rewriteMime=image/*'+
+        '&resize_w='+ww+
+        '&resize_hh='+hh+
+        '&url='+aa;
+    var img_html='<img src='+img_url+'>';
+    var text_html=''+aa+'<br/>'+ww+'x'+hh+'<br/>';
+    $("#showreslut").html( text_html+img_html );
   });
   
 }
 
-
 </script>
-
 
 </head>
 <body>
 
+<script src2="https://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+
 
 <form id='form01' enctype="multipart/form-data" action='' method="post" onsubmit="return false">
-<input type="text" name="input_url" id="input_url" size="20" value="url網址">
+<input type="text" name="input_url" id="input_url" size="20" value="http://ram.komica2.net/00/src/1551538583126.jpg">
+<br/>
+<input type="text" name="input_ww" id="input_ww" size="10" value="ww">
+x
+<input type="text" name="input_hh" id="input_hh" size="10" value="hh">
 <input type="submit" name="btn_send" id="btn_send" value="送出">
 </form>
 
 <div id='showreslut'>
-  
+https://i.imgur.com/jEoCfpA.jpg
 </div>
 
 
