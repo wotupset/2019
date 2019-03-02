@@ -39,7 +39,10 @@ function poi(){
     
     var wh=$("#input_wh").val();
     console.log(wh);
-    if(wh>0){}else{wh=0;}
+    if(wh>0){}else{
+      wh=0;
+      $("#input_wh").val(0);
+    }
     wh=Math.floor(wh);
 
     var ww=wh;
