@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+
+<meta property="og:title" content="標題"/>
+<meta property="og:description" content="描述"/>
+<meta property="og:image" content="https://i.imgur.com/ql6mO8W.png"/>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	var str=`
+輝夜姬想讓人告白～天才們的戀愛頭腦戰～ [08]
+
+
+
+  `;
+	bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	document.title=str;
+	console.log(bb);
+});
+
+document.addEventListener("readystatechange",function(e){
+	console.log( "readystatechange" );
+	//console.log( e );
+	//console.log( document.readyState );
+	if(document.readyState === "complete"){
+		console.log( 'complete' );
+		var bb=document.querySelector("h1");
+		var str=`
+動畫截圖
+
+		`;
+		bb.insertAdjacentHTML('afterend', '<pre>'+str+'</pre>');
+	}
+});
+
+	
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	//
+	//poi();
+	poi2();
+});
+
+function poi2(){
+
+var str=`
+
+
+龜190303+02+001.jpg
+龜190303+02+002.jpg
+龜190303+02+003.jpg
+龜190303+02+004.jpg
+龜190303+02+005.jpg
+龜190303+02+006.jpg
+龜190303+02+007.jpg
+龜190303+02+008.jpg
+龜190303+02+009.jpg
+龜190303+02+010.jpg
+龜190303+02+011.jpg
+龜190303+02+012.jpg
+龜190303+02+013.jpg
+龜190303+02+014.jpg
+龜190303+02+015.jpg
+龜190303+02+016.jpg
+龜190303+02+017.jpg
+龜190303+02+018.jpg
+龜190303+02+019.jpg
+龜190303+02+020.jpg
+龜190303+02+021.jpg
+龜190303+02+022.jpg
+龜190303+02+023.jpg
+龜190303+02+024.jpg
+龜190303+02+025.jpg
+龜190303+02+026.jpg
+龜190303+02+027.jpg
+龜190303+02+028.jpg
+龜190303+02+029.jpg
+龜190303+02+030.jpg
+龜190303+02+031.jpg
+龜190303+02+032.jpg
+龜190303+02+033.jpg
+龜190303+02+034.jpg
+龜190303+02+035.jpg
+龜190303+02+036.jpg
+龜190303+02+037.jpg
+
+
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		//console.log(element.length);
+		poi(''+element);
+	});
+
+	//console.log(str);
+	//poi();
+}
+function poi(input_var){
+	//var img = new Image();
+	var img = document.createElement('img')
+	img.src = input_var;
+	//img.setAttribute("crossOrigin",'Anonymous')
+	//console.log( img.src );
+
+	img.onload = function(e){
+		//console.log(e);
+		($.gg.cc++);
+		console.log( $.gg.cc );
+		var imgw=$(img).prop('naturalWidth');
+		var imgh=$(img).prop('naturalHeight');
+		console.log( imgw,imgh );//naturalHeight
+		if(  imgw>0 && imgh>0  ){
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 1280;
+			c.height = 720+1;
+			ctx.drawImage(img,0,0, c.width , c.height );//
+			var img_new = c.toDataURL("image/jpeg");
+			//console.log( img_new );
+			var newimg = document.createElement('img');
+			newimg.src=img_new;
+			var bb=document.querySelector("body");
+			bb.appendChild(newimg);
+		}else{
+			console.log('錯誤的wh');
+			console.log(img.src);
+			//throw 
+		}//if
+	};//img.onload
+	img.onerror=function(e){
+		console.log('img.onerror');
+		//console.log(e);
+		console.log(img.src);
+	};//img.onerror
+
+}//poi
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
