@@ -9,5 +9,7 @@ Endro [08]
 https://wotupset.github.io/2019/03/03/02.htm
 輝夜姬想讓人告白～天才們的戀愛頭腦戰～ [08]
 
-
-
+### 15
+https://wotupset.github.io/2019/03/15/01.htm 
+『リズと青い鳥』
+「響け! ユーフォニアム」電影
