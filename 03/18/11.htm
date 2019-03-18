@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>網頁</title>
+<script>
+document.addEventListener('DOMContentLoaded', function(e){
+	console.log('DOMContentLoaded');
+  window.gg=[];
+  gg.cc=0;
+  //
+  poi();
+});
+
+function poi(){
+  var ss = document.querySelectorAll('video');
+  ss.forEach(function(item,index){
+    item.style.width="300px";
+    item.addEventListener("loadedmetadata",function(e){
+      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
+    });
+  });
+}
+</script>
+  
+</head>
+<body>
+
+<h1>《狂浪生》</h1>
+
+<pre>
+可笑今朝我形只影單
+那古道青墳煙
+敢問今夕何年
+可愿與我夢里共赴雁門關
+</pre>
+  
+  
+<video class="player" src="https://aweme.snssdk.com/aweme/v1/playwm/?video_id=v0200f880000bdc8kuj3ft9rt8nrmm30&amp;line=0" poster="https://p1.pstatp.com/large/9d3900099e2d311436c4.jpg" type="video/mp4" controls="controls" style="width: 100%;"></video>  
+  
+  
+  
+
+</body>
+</html>
+
