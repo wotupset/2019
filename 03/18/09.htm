@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>網頁</title>
+<script>
+document.addEventListener('DOMContentLoaded', function(e){
+	console.log('DOMContentLoaded');
+  window.gg=[];
+  gg.cc=0;
+  //
+  poi();
+});
+
+function poi(){
+  var ss = document.querySelectorAll('video');
+  ss.forEach(function(item,index){
+    item.style.width="300px";
+    item.addEventListener("loadedmetadata",function(e){
+      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
+    });
+  });
+}
+</script>
+  
+</head>
+<body>
+
+
+
+<h1>《清明上河圖》</h1>
+
+<pre>
+綾羅飄起遮住日落西
+奏一回斷腸的古曲
+抬起畫面如此的美麗
+孰不知是誰的墨筆
+</pre>
+  
+  
+  
+  
+
+</body>
+</html>
