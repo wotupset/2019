@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>網頁</title>
+<script>
+document.addEventListener('DOMContentLoaded', function(e){
+	console.log('DOMContentLoaded');
+  window.gg=[];
+  gg.cc=0;
+  //
+  poi();
+});
+
+function poi(){
+  var ss = document.querySelectorAll('video');
+  ss.forEach(function(item,index){
+    item.style.width="300px";
+    item.addEventListener("loadedmetadata",function(e){
+      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
+    });
+  });
+}
+</script>
+  
+</head>
+<body>
+
+
+
+<h1>《一生獨一》</h1>
+
+<pre>
+一城烟雨一楼台
+一花只为一树开
+一颦一笑一知己
+一点一滴一情怀
+
+</pre>
+  
+  
+<video class="player" src="https://aweme.snssdk.com/aweme/v1/playwm/?video_id=v0200fab0000bcpmecniv42a7ggo6ve0&amp;line=0" poster="https://p3.pstatp.com/large/92b6000b995f924148d8.jpg" type="video/mp4" controls="controls" style="width: 100%;"></video>  
+
+</body>
+</html>
