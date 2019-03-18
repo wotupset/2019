@@ -4,7 +4,26 @@
 <head>
 <meta charset="UTF-8" />
 <title>網頁</title>
+<script>
+document.addEventListener('DOMContentLoaded', function(e){
+	console.log('DOMContentLoaded');
+  window.gg=[];
+  gg.cc=0;
+  //
+  poi();
+});
 
+function poi(){
+  var ss = document.querySelectorAll('video');
+  ss.forEach(function(item,index){
+    item.style.width="300px";
+    item.addEventListener("loadedmetadata",function(e){
+      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
+    });
+  });
+}
+</script>
+  
 </head>
 <body>
 
@@ -25,21 +44,21 @@
        poster="https://p1.pstatp.com/large/1685e000ad7accd97db4f.jpg"
        type="video/mp4"
        controls="controls"
-       style="width: 360px;"></video>
+       style="width: 100%;"></video>
   
 <video class="player" 
        src="https://aweme.snssdk.com/aweme/v1/playwm/?video_id=v0200f9a0000be2ht0k1n3edgv42747g&amp;line=0" 
        poster="https://p1.pstatp.com/large/b154000214e2e8ee29d9.jpg" 
        type="video/mp4" 
        controls="controls" 
-       style="width: 360px;"></video>
+       style="width: 100%;"></video>
   
 <video class="player" 
        src="https://aweme.snssdk.com/aweme/v1/playwm/?video_id=848d816c660a4dd88dfee964d1fe8b0f&amp;line=0" 
        poster="https://p1.pstatp.com/large/7c940005c71e8ef9153b.jpg" 
        type="video/mp4" 
        controls="controls" 
-       style="width: 360px;"></video>
+       style="width: 100%;"></video>
   
   
   
