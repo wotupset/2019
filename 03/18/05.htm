@@ -5,7 +5,25 @@
 <head>
 <meta charset="UTF-8" />
 <title>網頁</title>
-
+<script>
+document.addEventListener('DOMContentLoaded', function(e){
+	console.log('DOMContentLoaded');
+  window.gg=[];
+  gg.cc=0;
+  //
+  poi();
+});
+function poi(){
+  var ss = document.querySelectorAll('video');
+  ss.forEach(function(item,index){
+    item.style.width="300px";
+    item.addEventListener("loadedmetadata",function(e){
+      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
+    });
+  });
+}
+</script>
+  
 </head>
 <body>
 
