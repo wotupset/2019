@@ -53,11 +53,13 @@ function poi(){
 var str2=`
 '成功'
 ${str}
+<img src="${str}:thumb" class="cls">
 <img src="${str}:small" class="cls">
-<img src="${str}" class="cls">
+<img src="${str}:medium" class="cls">
 <img src="${str}:large" class="cls">
 <img src="${str}:orig"  class="cls">
 `;
+    //<img src="${str}" class="cls">
     str2='<pre>'+str2+'</pre>';
     $("#showreslut").html( str2 );
     //
