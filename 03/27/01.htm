@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>網頁</title>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(e){
+  console.log("DOMContentLoaded");
+});
+
+$(()=>{});
+$(function(){});
+(function(){})();
+
+try{
+  $(document).ready(function() {
+    console.log("document ready");
+    poi();
+  });
+}
+catch(err){}
+finally{}
+
+
+
+function poi(){
+  $("#btn_send").on('click', function(event){
+    var url=$("#input_url").val();
+    var url = new URL( url );
+
+    var urlhash_format =url.searchParams.get('format');
+    var urlhash_name   =url.searchParams.get('name');
+    //url.searchParams.forEach(function(item,index){});  
+    
+    var str='';
+    if( urlhash_format ){
+      str=''+url.origin+url.pathname+'.'+url.searchParams.get('format');
+    }else{
+      str=url.href;
+      str=str.split(':'); //字元分割 
+      str=str[0]+':'+str[1];
+    }
+
+    //console.log( str );
+var str2=`
+'成功'
+${str}
+<img src="${str}:small" class="cls">
+<img src="${str}" class="cls">
+<img src="${str}:large" class="cls">
+<img src="${str}:orig"  class="cls">
+`;
+    str2='<pre>'+str2+'</pre>';
+    $("#showreslut").html( str2 );
+    //
+    poi_a();
+        
+
+  });//click
+
+}
+
+function poi_a(){
+  $('.cls').each(function(index, item) { 
+    console.log(index, item); 
+		item.onload = function(){
+			var str=''+item.naturalWidth+'x'+item.naturalHeight+'';
+      console.log( str ); 
+			item.insertAdjacentHTML('beforebegin', str+'<br/>');
+			//document.title=''+str;
+			//
+		};
+
+    
+    
+  });
+}//poi_a()
+function poi_b(url){
+  return str;
+}//poi_b()
+
+
+
+</script>
+<style>
+.cls2{
+  width:auto;
+  height:100px;
+}
+</style>
+</head>
+<body>
+
+  
+<form id='form01' enctype="multipart/form-data" action='' method="post" onsubmit="return false">
+ 
+<input type="text" name="input_url" id="input_url" size="20" value="">
+<input type="submit" name="btn_send" id="btn_send" value="送出">
+</form>
+
+<div id='showreslut'>
+<pre>
+https://pbs.twimg.com/media/D2dEk64UgAA8hbB?format=jpg&name=360x360
+https://pbs.twimg.com/media/D2g4G9YU8AAc_QC.jpg:large
+</pre>
+</div>
+
+  
+
+</body>
+</html>
+
