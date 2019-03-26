@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>網頁</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function(e){
+  console.log("DOMContentLoaded");
+});
+
+$(()=>{});
+$(function(){});
+(function(){})();
+
+try{
+  $(document).ready(function() {
+    console.log("document ready");
+    poi();
+  });
+}
+catch(err){}
+finally{}
+
+
+
+function poi(){
+  $("#btn_send").on('click', function(event){
+    var aa=$("#input_url").val();
+    var wh=$("#input_wh").val();
+    console.log(wh);
+    if(wh>0){
+      //
+    }else{
+      wh=0;
+      $("#input_wh").val(0);
+    }
+    wh=Math.floor(wh);
+    console.log(wh);
+    var ww=wh;
+    var hh=wh;
+    var img_url=''+
+        'https://images2-focus-opensocial.googleusercontent.com/gadgets/proxy'+
+        '?container=focus'+
+        '&gadget=a'+
+        '&no_expand=1'+
+        '&rewriteMime=image/*'+
+        '&resize_w='+ww+
+        '&resize_h='+hh+
+        '&url='+aa;
+    //var img_html='<img src="'+img_url+'">';
+    poi_b(img_url);
+    
+    //var text_html=''+aa+'<br/>'+ww+'x'+hh+'<br/>';
+    //var link_html='<a href="'+img_url+'" download="jpg.jpg">下載</a>'+'<br/>';
+  });
+  
+}
+
+function poi_b(img_url){
+  console.log( img_url );
+  //
+  var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange=function(e){
+    console.log(this.readyState,this.status);
+    if(this.readyState == 4){
+      if(this.status == 200){
+        console.log('成功');
+        poi_b2(this.response);
+      }else{
+        console.log('失敗');
+        $("#showreslut").html( '失敗' );
+        
+      }
+
+    }
+  };
+  var url=img_url;
+	xhr.open('GET', url);
+	xhr.responseType = 'blob';
+	xhr.send();      
+
+}//poi_b()
+
+
+function poi_b2(xxx){
+  $("#showreslut").html( '' );
+  //建立圖片dom
+  var img_html='<img id="img01">';
+  $("#showreslut").prepend( img_html );
+  var img01 = document.getElementById('img01');
+  //console.log( img01 );
+  //建立連結dom
+  var link_html='<a id="aa01">下載</a>'+'<br/>';
+  $("#showreslut").prepend( link_html );
+  var aa01 = document.getElementById('aa01');
+  //console.log( aa01 );
+  //
+  img01.onload = function(e){
+    var str=''+this.naturalWidth+'x'+this.naturalHeight+' ';
+    //console.log( str );
+    img01.insertAdjacentHTML('beforebegin', str+'<br/>');
+    aa01.href = window.URL.createObjectURL(xxx);
+    aa01.download='dd.jpg';
+  };
+  img01.src = window.URL.createObjectURL(xxx);
+  //aa.click();
+}//poi_b2()
+
+</script>
+
+<style>
+</style>
+
+</head>
+<body>
+
+  
+
+
+<form id='form01' enctype="multipart/form-data" action='' method="post" onsubmit="return false">
+<input type="text" name="input_url" id="input_url" size="20" value="https://i.imgur.com/jEoCfpA.jpg">
+<br/>
+wh=<input type="text" name="input_wh" id="input_wh" size="10" value="1000">
+<input type="submit" name="btn_send" id="btn_send" value="送出">
+</form>
+
+<div id='showreslut'>
+  http://ram.komica2.net/00/src/1551538583126.jpg  2019/03/02(六)22:56:23.172
+  <br/>
+  https://i.imgur.com/jEoCfpA.jpg 
+</div>
+
+
+  
+
+</body>
+</html>
