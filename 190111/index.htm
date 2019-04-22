@@ -27,6 +27,19 @@ document.addEventListener("DOMContentLoaded",function(e){
 	bb.insertAdjacentHTML('beforeend', '<h1>[棺姫のチャイカ]衝撃の事実.jpg</h1>');
 	console.log(bb);
 });
+document.addEventListener("readystatechange",function(e){
+	console.log( "readystatechange" );
+	//console.log( e );
+	//console.log( document.readyState );
+	if(document.readyState === "complete"){//圖片載入完成
+		console.log( 'complete' );//
+		var bb=document.querySelector("h1");
+var str=`
+嘉依卡：衝擊的事實!!
+`;
+		bb.insertAdjacentHTML('afterend', '<p>'+str+'</p>');
+	}
+});
 
 $(function(){});
 $(()=>{
