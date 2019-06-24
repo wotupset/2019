@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>網頁</title>
+<script>
+document.addEventListener('DOMContentLoaded', function(e){
+	console.log('DOMContentLoaded');
+  window.gg=[];
+  gg.cc=0;
+  //
+  poi();
+});
+
+function poi(){
+  var ss = document.querySelectorAll('video');
+  ss.forEach(function(item,index){
+    item.style.width="300px";
+    item.addEventListener("loadedmetadata",function(e){
+      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
+    });
+  });
+}
+</script>
+  
+</head>
+<body>
+
+
+
+<h1>我们的传统武术真的是我们传统吗？</h1>
+
+<pre>
+#神话 #文化 #中国功夫
+</pre>
+  
+<video class="player" src="https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc562f1567ce2c2a6995b5ab7d80b409c8ac2e5b5ccba107c401dd5e0afbfd8624f73587bcdfa31ec707f92e74aa121a4ea8&amp;line=0" poster="https://p3.pstatp.com/large/2749b000bbea08026c1c5.jpg" type="video/mp4" preload="auto" controls="controls" style="width: 100%;"></video>
+<video class="player" src="https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc5608aa906c92fdbc17aeb3330abc6fdebfdaa9e5ff96358db2b0c022a3b810174458f2272ab78dddc9bce8be759566f068&amp;line=0" poster="https://p1.pstatp.com/large/2747400081bf7efcbe3f0.jpg" type="video/mp4" preload="auto" controls="controls" style="width: 100%;"></video>
+<video class="player" src="https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc568eac24dec771c21c8dfa37434cab4a7c6679794bc31df97efe6354c2e6b24c05d4b05bbdd27f295a21f367955b1527a9&amp;line=0" poster="https://p1.pstatp.com/large/276aa0001671d6672a1e2.jpg" type="video/mp4" preload="auto" controls="controls" style="width: 100%;"></video>
+<video class="player" src="https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc565bdba3d2eff63745e00c8021b9fae0a1274117a6639521531b94cffbbca3c08e452f4f95713e47c8344bcb841df82bbd&amp;line=0" poster="https://p1.pstatp.com/large/271b8000b4cf43527d185.jpg" type="video/mp4" preload="auto" controls="controls" style="width: 100%;"></video>
+  
+  
+
+</body>
+</html>
