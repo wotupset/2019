@@ -9,4 +9,5 @@ https://streamable.com/u92h4
 ## Tate no Yuusha no Nariagari [ED1] [1080p]
 https://streamable.com/b7oj7
 
-##
+## Tate no Yuusha no Nariagari [ED2] [1080p]
+https://streamable.com/dfpt1
