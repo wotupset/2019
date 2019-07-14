@@ -14,15 +14,6 @@ document.addEventListener('DOMContentLoaded', function(e){
   //poi();
 });
 
-function poi(){
-  var ss = document.querySelectorAll('video');
-  ss.forEach(function(item,index){
-    item.style.width="300px";
-    item.addEventListener("loadedmetadata",function(e){
-      console.log("loadedmetadata",this.videoWidth,this.videoHeight);
-    });
-  });
-}
 </script>
   
 </head>
@@ -30,7 +21,7 @@ function poi(){
 
 
   
-<video class="player" src="1563091061277.webm" poster="" type="video/webm" controls="controls" style="width: 100%;"></video>  
+<video src="1563091061277.webm" controls="controls" ></video>  
   
   
   
