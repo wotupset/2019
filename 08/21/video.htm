@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+function poi190821(){
+
+}
+
+function poi2(){
+/*
+js 樣板字面值（Template literals）
+*/
+var str=`
+aa (1).mp4
+aa (1).webm
+aa (2).mp4
+aa (2).webm
+aa (3).webm
+aa (4).webm
+aa (5).webm
+aa (6).webm
+aa (7).webm
+aa (8).webm
+aa (9).webm
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var str=`
+<video width="300" height="300" controls src="${input_var}">
+</video>
+`;
+	console.log(str);
+	$('#ddd').append(str);
+}
+
+</script>
+
+</head>
+<body>
+<div id="ddd"></div>
+</body>
+</html>
