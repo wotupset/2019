@@ -28,3 +28,5 @@ webm
   + https://wotupset.github.io/2019/08/21/video.htm webm
   + https://wotupset.github.io/2019/08/21/21/video.htm webm
   + https://wotupset.github.io/2019/08/21/twitter.htm
++ 22
+  + https://wotupset.github.io/2019/08/22/video.htm webm
