@@ -32,3 +32,4 @@ webm
   + https://wotupset.github.io/2019/08/22/video.htm webm
 + 25
   + https://wotupset.github.io/2019/08/25/video.htm webm
+  + https://wotupset.github.io/2019/08/25/25/image.htm image
