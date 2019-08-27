@@ -36,3 +36,5 @@ webm
   CGSS 1
   + https://wotupset.github.io/2019/08/25/25/25/image.htm image
   CGSS 2
++ 27
+  + https://wotupset.github.io/2019/08/27/video.htm webm
