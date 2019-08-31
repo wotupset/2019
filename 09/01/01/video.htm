@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+function poi190821(){
+
+}
+
+function poi2(){
+/*
+js 樣板字面值（Template literals）
+*/
+var str=`
+
+-v5GMKnjCgpMZS63.mp4
+
+6jbtLLlW10OScVo3.mp4
+AY05VacWdLKqYXTb.mp4
+B96ckbkIm4R-nA4R.mp4
+C37PhDV6rQkfrZnj.mp4
+D2BrZYxx7Oxs-MzO.mp4
+d7fXVIWiwVCoBExu.mp4
+DWUs5cPRhImYXSp-.mp4
+EDTXQWeU0AA4AXy.mp4
+EKxPbixWZnxoF053.mp4
+EoAM_ShQ0zAbnuAg.mp4
+GA1quvHFcX-WTUzM.mp4
+HBAcomcCKJUBvYy0.mp4
+HbvjpHrbK63dZ2y0.mp4
+IcNLngZSruWf-tZo.mp4
+
+JkiXCE-pxxJuDyWu.mp4
+kjMWlMCFt-9qTIPy.mp4
+mKE9q1Yu86dfgDbh.mp4
+N54qG0hWm7b3b7_C.mp4
+pB3h0elGUyZqQQPW.mp4
+QM8fclN-uJpt2NOc.mp4
+
+rFu80X6tObIWYHeF.mp4
+SfsbMwJ_rMQhZn0T.mp4
+Stw2EUYUk3NBu7uO.mp4
+tj_iQ-5J4qXnurcm.mp4
+TSKF4jAPg69kseNi.mp4
+uVlC6BRjDF2xM3Id.mp4
+v6qrh3OM9WCNk0Y4.mp4
+VbXGqR0IMbDfO7Tk.mp4
+
+wCisy_p7oiunveG5.mp4
+WPMddHsHO_-F9epN.mp4
+ZRdJoHIuuxEMhKzH.mp4
+_B0laciG1XWvuHsC.mp4
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var str=`
+<video width="300" height="300" controls src="${input_var}">
+</video>
+`;
+	console.log(str);
+	$('#ddd').append(str);
+}
+
+</script>
+
+</head>
+<body>
+<div id="ddd"></div>
+</body>
+</html>
