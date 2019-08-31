@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body{}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+function poi190821(){
+
+}
+
+function poi2(){
+/*
+js 樣板字面值（Template literals）
+*/
+var str=`
+
+1566976923271.webm
+1567161564426.webm
+1567162348396.webm
+1567162807615.webm
+1567163793307.webm
+1567163906127.webm
+1567165757705.webm
+1567165891327.webm
+1567169915019.webm
+1567171023420 (1).webm
+1567171023420.webm
+1567171151662.webm
+1567172732472.webm
+1567178595562.webm
+1567211201823.webm
+1567214203120.webm
+1567216678882.webm
+1567218804360.webm
+EDKvzyqXkAULT-r.mp4
+QN1gCPtl1LeE5uXk.mp4
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var str=`
+<video width="300" height="300" controls src="${input_var}">
+</video>
+`;
+	console.log(str);
+	$('#ddd').append(str);
+}
+
+</script>
+
+</head>
+<body>
+<div id="ddd"></div>
+</body>
+</html>
