@@ -1,2 +1,2 @@
-# readme.md
-[./video.htm](./video.htm)
+# 暴政必亡 
+## 民主不能當飯吃
