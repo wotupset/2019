@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+function poi190821(){
+
+}
+
+function poi2(){
+/*
+js 樣板字面值（Template literals）
+*/
+var str=`
+aa (1).jpg
+aa (10).jpg
+aa (11).jpg
+aa (12).jpg
+aa (13).jpg
+aa (14).jpg
+aa (15).jpg
+aa (16).jpg
+aa (2).jpg
+aa (3).jpg
+aa (4).jpg
+aa (5).jpg
+aa (6).jpg
+aa (7).jpg
+aa (8).jpg
+aa (9).jpg
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var str=`
+<img width="300" height="300" src="./list2/${input_var}"/>
+`;
+	console.log(str);
+	$('#ddd').append(str);
+}
+
+</script>
+
+</head>
+<body>
+<div id="ddd"></div>
+</body>
+</html>
