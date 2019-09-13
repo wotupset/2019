@@ -21,3 +21,6 @@ https://wotupset.github.io/2019/09/
 【アズールレーン】フォーミダブル (空母)
 HMS Formidable
 光輝級空母的第三號艦
++ 13
+  + https://wotupset.github.io/2019/09/13/image.htm 
+事件簿圖片 
