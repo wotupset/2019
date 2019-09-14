@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+function poi190821(){
+
+}
+
+function poi2(){
+/*
+js 樣板字面值（Template literals）
+*/
+var str=`
+63149181_p0.jpg
+66651968_p0.png
+72764794_p0.jpg
+73506835_p0.jpg
+73533746_p0.png
+74409125_p0.png
+74410122_p0.jpg
+74418577_p0.png
+74441096_p0.png
+74448362_p0.jpg
+74452231_p0.png
+74490987_p0.jpg
+74502093_p0.jpg
+74502156_p0.jpg
+74502459_p0.png
+74505382_p0.png
+74513937_p0.jpg
+74517330_p0.jpg
+74523082_p0.jpg
+74539589_p0.png
+74558188_p0.jpg
+74558969_p0.jpg
+74577008_p0.jpg
+74605606_p0.png
+74624401_p0.png
+74626522_p0.jpg
+74635709_p0.png
+74636411_p0.jpg
+74678484_p0.jpg
+74686184_p0.png
+74701711_p0.jpg
+74707923_p0.jpg
+74717275_p0.png
+74751621_p0.jpg
+74770170_p0.jpg
+74795185_p0.jpg
+74809936_p0.png
+74998084_p0.png
+75061013_p0.jpg
+75092303_p0.png
+75148696_p0.png
+75488186_p0.png
+75603796_p0.jpg
+75667659_p0.png
+75741520_p0.jpg
+75901495_p0.jpg
+75909027_p0.png
+76027123_p0.jpg
+76036094_p0.png
+76214037_p0.jpg
+76267901_p0.png
+76297557_p0.png
+76632166_p0.jpg
+76673937_p0.jpg
+D6LPtarVUAIOhYb_orig.jpg
+thumb-1920-1000644.jpg
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var str=`
+<img width="300" height="300" src="./list2/${input_var}"/>
+`;
+	console.log(str);
+	$('#ddd').append(str);
+}
+
+</script>
+
+</head>
+<body>
+<div id="ddd"></div>
+</body>
+</html>
