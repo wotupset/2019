@@ -26,7 +26,7 @@ HMS Formidable
 事件簿圖片 
 + 14
   + https://wotupset.github.io/2019/09/14/video.htm webm
-+ 12
++ 16
   + https://wotupset.github.io/2019/09/16/video.htm webm
   + https://wotupset.github.io/2019/09/16/image.htm 
 【アズールレーン】フォーミダブル (空母)
