@@ -30,3 +30,5 @@ HMS Formidable
   + https://wotupset.github.io/2019/09/16/video.htm webm
   + https://wotupset.github.io/2019/09/16/image.htm 
 【アズールレーン】フォーミダブル (空母)
++ 17
+  + https://wotupset.github.io/2019/09/17/video.htm webm
