@@ -44,3 +44,4 @@ HMS Formidable
   + https://wotupset.github.io/2019/09/26/twitter.htm  
 + 27
   + https://wotupset.github.io/2019/09/27/video.htm webm
+  + https://wotupset.github.io/2019/09/27/twitter.htm  
