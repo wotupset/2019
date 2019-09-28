@@ -1,3 +1,3 @@
+# 太平島挖石油
 
-# 國家機器
 ![](https://i.imgur.com/cDl2yfr.png)
