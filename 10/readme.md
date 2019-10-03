@@ -5,7 +5,7 @@ https://wotupset.github.io/2019/10/
   + https://wotupset.github.io/2019/10/01/video.htm 
   + https://wotupset.github.io/2019/10/01/twitter.htm  
   + https://wotupset.github.io/2019/10/01/image.htm 
-+ 02
-  + https://wotupset.github.io/2019/10/02/video.htm 
-  + https://wotupset.github.io/2019/10/02/twitter.htm  
++ 03
+  + https://wotupset.github.io/2019/10/03/video.htm 
+  + https://wotupset.github.io/2019/10/03/twitter.htm  
 
