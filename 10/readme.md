@@ -10,3 +10,5 @@ https://wotupset.github.io/2019/10/
   + https://wotupset.github.io/2019/10/03/twitter.htm  
 + 04
   + https://wotupset.github.io/2019/10/04/video.htm 
++ 07
+  + https://wotupset.github.io/2019/10/07/video.htm 
