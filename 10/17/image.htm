@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	var bb=document.querySelector("body");
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+  //
+  $.gg=[];
+  //
+  //poi();
+  poi2();
+});
+function poi190821(){
+
+}
+
+function poi2(){
+/*
+js 樣板字面值（Template literals）
+*/
+var str=`
+
+
+1568689708872.jpg
+1568780559988.jpg
+190919-01-002.jpg
+190919-01-004.jpg
+190919-01-006.jpg
+190919-01-008.jpg
+190919-02-001.jpg
+190919-03-001.jpg
+190919-03-005.jpg
+190919-03-010.jpg
+190919-03-012.jpg
+76746486_p0.jpg
+76766355_p0.png
+76766355_p2.png
+76774410_p0.jpg
+76788360_p0.jpg
+76788360_p2.jpg
+76791194_p0.png
+76824762_p0.png
+76824762_p0_master1200.jpg
+76826377_p0.jpg
+EEbFN0fUcAEjJ_D_orig.jpg
+EEbJ9xqUUAADIDD_orig.jpg
+EEevwXWUwAEQaq-_orig.jpg
+EEfhgpYVAAEJbwt_orig.jpg
+EEftQX0UwAA2SXx_orig.jpg
+EEgJD8hUYAE2tJK_orig.jpg
+EEgkKjpVUAEQmGn_orig.png
+EEheAERVAAAqJkw_orig.jpg
+EElFB63UEAAFXHl_orig.jpg
+EElPXIFUwAECCtq_orig.jpg
+EEltyl6UwAA83zi_orig.jpg
+EElUE_QVAAAYnla_orig.jpg
+EELYOyRUUAA1NxQ_orig.jpg
+EEm5aKwUUAE7rnB_orig.jpg
+EEmCtSFUEAAsX-u_orig.jpg
+EEmlbMDUcAAcq9t_orig.jpg
+EEotxd2U4AA7Ukr_orig.jpg
+EEp97iEU4AEWe1__orig.jpg
+EEpsnepU8AAndsn_orig.jpg
+EEQFCUtVUAA3cjP_orig.jpg
+EEQKXSsVUAEYUeE_orig.jpg
+EEqVKUBUYAAVtYf_orig.jpg
+EEQY-5QVUAEmmMF_orig.jpg
+EEQYnqiVAAAVeGS_orig.jpg
+EEsyyc8U4AEalvs_orig.jpg
+EEv-QDoU0AADJhn_orig.jpg
+EEvmO6tU4AImub9_orig (1).jpg
+EEvrx_OUEAA5HKO_orig.jpg
+EEwJtT2U0AIfJdl_orig.jpg
+EEwPQc4U4AA2pwI_orig.jpg
+
+
+`;
+	str=str.split("\n");
+	//typeof element
+	str=str.filter(function(element){
+		return (element.length>0);
+	});
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+
+	console.log(str);
+	//poi();
+}
+function poi(input_var){
+var str=`
+<img width="300" height="300" src="./list2/${input_var}"/>
+`;
+	console.log(str);
+	$('#ddd').append(str);
+}
+
+</script>
+
+</head>
+<body>
+<div id="ddd"></div>
+</body>
+</html>
