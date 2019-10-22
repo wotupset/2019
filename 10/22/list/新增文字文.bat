@@ -1,2 +1,2 @@
-dir /b >_.txt
-start "" _.txt
+dir /b >-.txt
+start "" -.txt
