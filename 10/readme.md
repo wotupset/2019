@@ -27,3 +27,7 @@ https://wotupset.github.io/2019/10/
 + 22 video.htm 更新 image.htm 更新
   + https://wotupset.github.io/2019/10/22/video.htm 
   + https://wotupset.github.io/2019/10/22/image.htm 
++ 24
+  + https://wotupset.github.io/2019/10/24/video.htm 
+  + https://wotupset.github.io/2019/10/24/twitter.htm  
+  + https://wotupset.github.io/2019/10/24/image.htm 
