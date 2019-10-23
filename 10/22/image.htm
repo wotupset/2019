@@ -22,11 +22,47 @@ $(()=>{
   $.gg=[];
   //
   //poi();
-  poi2();
+  //poi2();
+  poi191022();
 });
-function poi190821(){
+function poi191022(){
+	//console.log( 'poi191022()' );
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET","./list2/-.txt", true);
+	xhr.onreadystatechange = function(){
+	  if(xhr.readyState==4){
+		if(xhr.status==200){
+			allText = xhr.responseText;
+			//console.log( allText );
+			poi191022b( allText );
+		}
+	  }
 
-}
+	};
+	xhr.send();
+}//poi191022()
+
+function poi191022b( str ){
+	//console.log( 'poi191022b()' );
+	//console.log( str );
+	//var str='';
+	str = str.split("\n"); //以行分割
+	var FFF='';
+	str=str.filter(function(item,index){
+		var aa=item.endsWith(".jpg");
+		if(aa){return true;}
+		var aa=item.endsWith(".png");
+		if(aa){return true;}
+		return false; 
+	});
+	//console.log( str );
+	var FFF='';
+	str.forEach(function(element) {
+		poi(''+element);
+	});
+}//poi191022b( str )
+
+
 
 function poi2(){
 /*
@@ -35,57 +71,6 @@ js 樣板字面值（Template literals）
 var str=`
 
 
-1568689708872.jpg
-1568780559988.jpg
-190919-01-002.jpg
-190919-01-004.jpg
-190919-01-006.jpg
-190919-01-008.jpg
-190919-02-001.jpg
-190919-03-001.jpg
-190919-03-005.jpg
-190919-03-010.jpg
-190919-03-012.jpg
-76746486_p0.jpg
-76766355_p0.png
-76766355_p2.png
-76774410_p0.jpg
-76788360_p0.jpg
-76788360_p2.jpg
-76791194_p0.png
-76824762_p0.png
-76824762_p0_master1200.jpg
-76826377_p0.jpg
-EEbFN0fUcAEjJ_D_orig.jpg
-EEbJ9xqUUAADIDD_orig.jpg
-EEevwXWUwAEQaq-_orig.jpg
-EEfhgpYVAAEJbwt_orig.jpg
-EEftQX0UwAA2SXx_orig.jpg
-EEgJD8hUYAE2tJK_orig.jpg
-EEgkKjpVUAEQmGn_orig.png
-EEheAERVAAAqJkw_orig.jpg
-EElFB63UEAAFXHl_orig.jpg
-EElPXIFUwAECCtq_orig.jpg
-EEltyl6UwAA83zi_orig.jpg
-EElUE_QVAAAYnla_orig.jpg
-EELYOyRUUAA1NxQ_orig.jpg
-EEm5aKwUUAE7rnB_orig.jpg
-EEmCtSFUEAAsX-u_orig.jpg
-EEmlbMDUcAAcq9t_orig.jpg
-EEotxd2U4AA7Ukr_orig.jpg
-EEp97iEU4AEWe1__orig.jpg
-EEpsnepU8AAndsn_orig.jpg
-EEQFCUtVUAA3cjP_orig.jpg
-EEQKXSsVUAEYUeE_orig.jpg
-EEqVKUBUYAAVtYf_orig.jpg
-EEQY-5QVUAEmmMF_orig.jpg
-EEQYnqiVAAAVeGS_orig.jpg
-EEsyyc8U4AEalvs_orig.jpg
-EEv-QDoU0AADJhn_orig.jpg
-EEvmO6tU4AImub9_orig (1).jpg
-EEvrx_OUEAA5HKO_orig.jpg
-EEwJtT2U0AIfJdl_orig.jpg
-EEwPQc4U4AA2pwI_orig.jpg
 
 
 `;
