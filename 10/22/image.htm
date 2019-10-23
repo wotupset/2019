@@ -49,8 +49,9 @@ function poi191022(){
 
 function poi191022b( str ){
 	//console.log( 'poi191022b()' );
-	//console.log( str );
+	console.log( str );
 	//var str='';
+	str = str.replace(/\r\n/g, "\n");
 	str = str.split("\n"); //以行分割
 	var FFF='';
 	str=str.filter(function(item,index){
@@ -58,9 +59,8 @@ function poi191022b( str ){
 		if(aa){return true;}
 		var aa=item.endsWith(".png");
 		if(aa){return true;}
-		return false; 
 	});
-	//console.log( str );
+	console.log( str );
 	var FFF='';
 	str.forEach(function(element) {
 		poi(''+element);
