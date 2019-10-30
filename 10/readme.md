@@ -36,3 +36,5 @@ https://wotupset.github.io/2019/10/
 + 28
   + https://wotupset.github.io/2019/10/28/video.htm 
   + https://wotupset.github.io/2019/10/28/twitter.htm  
++ 30
+  + https://wotupset.github.io/2019/10/30/video.htm 
