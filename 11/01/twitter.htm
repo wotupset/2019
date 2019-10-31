@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title</title>
+<meta charset="UTF-8" />
+<style>
+body{
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  console.log( 'DOMContentLoaded' );
+  var jsElm = document.createElement("script");
+  jsElm.type = "application/javascript";
+  jsElm.src = 'https://code.jquery.com/jquery-3.3.1.min.js';
+  jsElm.onload = function(e){
+    console.log('jsElm.onload');
+	//id01.insertAdjacentHTML('afterbegin', 'jquery讀取成功');
+	poi();
+  };
+  //document.body.appendChild(jsElm);
+  document.head.appendChild(jsElm);
+});
+
+
+
+
+function poi0(){}
+function poi_getjs(){
+    var jqxhr=$.getScript("https://platform.twitter.com/widgets.js");
+	jqxhr.done(function(){
+    if(0){
+      var id01=document.getElementById('ppp');
+      //var id01=document.getElementsByTagName("pre")[0];
+      id01.insertAdjacentHTML('beforebegin', 'beforebegin');
+      id01.insertAdjacentHTML('afterbegin', 'afterbegin');
+      id01.insertAdjacentHTML('beforeend', 'beforeend');
+      id01.insertAdjacentHTML('afterend', 'afterend');
+      console.log( id01.outerHTML );
+    }else{
+      //$("pre").hide();
+	  $("pre").html("完成"); //清掉了網址
+    }
+    //
+
+
+  });
+}
+function poi_ajax(){
+  var cc1=0;
+  var cc2=0;
+  $(document).ajaxComplete(function(a,b,c) { // event, xhr, settings
+    cc1++;
+    //console.log( 'ajaxComplete'+cc1 );
+    //console.log( a,b,c );
+  });
+  $(document).ajaxStop(function() {
+    cc2++;
+    //console.log( 'ajaxStop'+cc2 );
+	if(cc2==1){  
+	  //poi_getjs();//取得推特的js
+	}
+  });
+}
+	//qq是網址陣列
+	for(i=0;i<qq.length;i++){
+		var str1 = "box"+i;
+		var str2 = '<div id="'+str1+'">'+str1+'</div>';
+		$("#ddd").append( str2 );
+		var str3=$("#"+ str1 +"");
+		console.log( str1,str3 );
+
+		var url=''+qq[i];
+		var url2 = new URL(url);
+		//console.log( url2 );
+		//console.log( url2.pathname );
+		var tmp="";
+		tmp=url2.pathname.split("\/");
+		//console.log( tmp );
+		//console.log( tmp.length );
+		if(url2.host == "twitter.com"){
+			//console.log("twitter.com");
+		}else{
+			throw "推特網址?";
+			//throw new Error("錯誤error");
+		}
+		if(tmp.length<4){
+			throw "推特網址?";
+		}
+		if(tmp.length>4){
+			tmp=url2.pathname.split("\/");
+			//console.log( tmp.slice(0,4) );
+			url2.pathname=tmp.slice(0,4).join("\/");
+			//console.log( tmp );
+			//console.log( url2.href );
+			url=''+url2.href;
+		}
+	//
+	var jqxhr=[];
+	var cc_ajax=0;
+	jqxhr=$.ajax({
+		type:     "GET",
+		url:      "https://publish.twitter.com/oembed?url="+url,
+		dataType: "jsonp",
+		success: function(data){},
+		complete:function(data){},
+	});
+	jqxhr.done(function(a,b,c){
+		console.log( a,b,c );
+		cc_ajax++;
+		console.log( cc_ajax );
+		//console.log( 'ajax裏頭讀取'+cc1 );
+		//console.log( 'ajax裏頭讀取'+str1 );
+		//console.log( 'ajax裏頭讀取'+i );//8
+		//var FFF='box'+i;
+		//console.log( 'ajax裏頭讀取'+FFF );
+		//console.log( 'ajax裏頭讀取'+cc1 );
+		$("#ddd" ).append( $(a.html)[0] );
+		
+		//console.log( pp,qq.length,qq[pp] );
+		//$("pre").html("<b>("+pp+"/"+qq.length+") "+b+" "+qq[pp]+"</b>");
+		//console.log( 'jqxhr.done' );
+	});
+	jqxhr.fail(function(a,b,c){
+		//$("pre").html("<b>("+pp+"/"+qq.length+") 錯誤</b>");
+		//console.log( a,b,c );
+		//throw "錯誤error";
+		//throw new Error("錯誤error");
+	});
+
+  
+  }//for
+  
+  
+  
+
+
+
+function poi3(qq,pp){  //步進顯示
+
+	var str1 = "box"+pp;
+	//var str2 = '<div id="'+str1+'">&emsp;'+pp+'</div>';
+	var str2 = '<div id="'+str1+'">&emsp;🔰&ensp;'+pp+'</div>';
+/*
+&ZeroWidthSpace;
+&zwnj;
+&nbsp;  一般空格
+
+&ensp;  半形空格
+&emsp;  全形空格
+
+https://emojipedia.org/symbols/
+https://developer.wordpress.com/docs/photon/api/
+https://i2.wp.com/pbs.twimg.com/media/EFSeU3yVAAAn1J1.jpg?fit=2048,2048
+
+
+*/
+	$("#ddd").append( str2 );
+	var str3=$("#"+ str1 +"");
+	console.log( str1,str3 );
+
+	//檢查網址
+	var url=''+qq[pp];
+	var url2 = new URL(url);
+	console.log( url2 );
+	console.log( url2.pathname );
+	var tmp="";
+	tmp=url2.pathname.split("\/");
+	console.log( tmp );
+	//console.log( tmp.length );
+	if(url2.host == "twitter.com"){
+		//console.log("twitter.com");
+	}else{
+		throw "推特網址?";
+		//throw new Error("錯誤error");
+	}
+	if(tmp.length<4){
+		throw "推特網址?";
+	}
+	if(tmp.length>4){
+		tmp=url2.pathname.split("\/");
+		console.log( tmp.slice(0,4) );
+		url2.pathname=tmp.slice(0,4).join("\/");
+		console.log( tmp );
+		console.log( url2.href );
+		url=''+url2.href;
+	}
+	//檢查網址//
+  
+	var jqxhr =$.ajax({
+	type:     "GET",
+	url:      "https://publish.twitter.com/oembed?url="+url,
+	dataType: "jsonp",
+	success: function(data){
+		$("#box"+pp ).append( $(data.html)[0] );
+	},
+	error: function(){
+			//your code here
+	},
+	complete:function(data){
+		//console.log( pp,qq.length,qq[pp] );
+		//讀取完 就讀取推特js
+		if(pp<(qq.length-1)){
+			//pp++;
+			//poi3(qq,pp);
+		}else{
+			poi_getjs();//讀取完 就讀取推特js
+		}
+		//
+		
+	},
+	});
+	
+	
+	jqxhr.done(function(a,b,c){
+		//console.log( a,b,c );
+		//console.log( pp,qq.length,qq[pp] );
+		$("pre").html("<b>("+pp+"/"+qq.length+") "+b+" "+qq[pp]+"</b>");
+		//console.log( 'jqxhr.done' );
+	});
+	jqxhr.fail(function(a,b,c){
+		$("pre").html("<b>("+pp+"/"+qq.length+") 錯誤</b>");
+		console.log( a,b,c );
+		throw "錯誤error";
+		//throw new Error("錯誤error");
+	});
+	jqxhr.always(function(a,b,c){
+		//總是
+	});
+	
+	
+	//處理下一個
+	if(pp<(qq.length-1)){
+		poi4(qq,pp);//避免ajax延遲讀取變數
+	}else{
+		//poi_getjs();
+	}
+	//
+
+  
+}
+
+function poi4(qq,pp){ //避免ajax延遲讀取變數
+	pp++;
+	poi3(qq,pp);
+}//poi4()
+
+function poi2(){
+  var qq=$("pre").text();
+  $("pre").html("<b>讀取測試</b>");
+  qq=qq.split("\n");
+  qq=qq.filter(Boolean);
+  //console.log( qq );
+  for(i=0;i<qq.length;i++){
+    //$("#ddd").append(i+" "+qq[i]+"<br/>");
+    //poi( qq[i] );
+  }
+  poi3(qq,0); //ajax處理網址
+
+
+}
+function poi(){
+
+try{
+  $(document).ready(function() {
+  	console.log('document.ready');
+    time = new Date();
+	//
+    //poi_ajax();
+	//poi();
+    poi2();
+  });
+}catch(err){
+  	console.log( ''+err.message );
+}finally{
+    console.log( 'try-catch-finally' );
+}
+
+}
+</script>
+
+	</head>
+	<body>
+	
+<pre id="ppp">
+https://twitter.com/sakurapion/status/1188305539899355141
+https://twitter.com/atutoku_Is/status/1188483661206704128
+https://twitter.com/mob_oji_katu/status/1188828218721095680
+
+https://twitter.com/WYS_/status/1189190767186563072/photo/1
+https://twitter.com/satake_take/status/1189205848834236416/photo/3
+https://twitter.com/WYS_/status/1189193688276094978
+https://twitter.com/Carrot_MST/status/1189205880681594880
+
+https://twitter.com/peroncho18/status/1157693793052680193
+https://twitter.com/peroncho18/status/1159771321254862848
+https://twitter.com/Ren_sukiari/status/1189171422469296128
+
+
+https://twitter.com/SUPERnoMEGANE/status/1189596103886262273
+
+https://twitter.com/6U_s/status/1179714083940995073
+https://twitter.com/6U_s/status/1178627413674094598
+
+https://twitter.com/meth2480/status/1189302467009433610
+
+https://twitter.com/amatou111/status/1189747274273812485/photo/1
+
+https://twitter.com/asagi_0398/status/1189726777549049857
+
+https://twitter.com/amatou111/status/1189747274273812485/photo/1
+
+
+</pre>
+
+<div id="ddd"></div>
+
+
+	</body>
+</html>
