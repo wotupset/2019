@@ -1,0 +1,16 @@
+-.txt
+aa (1).jpg
+aa (1).png
+aa (10).jpg
+aa (11).jpg
+aa (12).jpg
+aa (13).jpg
+aa (2).jpg
+aa (3).jpg
+aa (4).jpg
+aa (5).jpg
+aa (6).jpg
+aa (7).jpg
+aa (8).jpg
+aa (9).jpg
+list.bat
