@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title</title>
+<meta charset="UTF-8" />
+<style>
+body{
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  console.log( 'DOMContentLoaded' );
+  var jsElm = document.createElement("script");
+  jsElm.type = "application/javascript";
+  jsElm.src = 'https://code.jquery.com/jquery-3.3.1.min.js';
+  jsElm.onload = function(e){
+    console.log('jsElm.onload');
+	//id01.insertAdjacentHTML('afterbegin', 'jquery讀取成功');
+	poi();
+  };
+  //document.body.appendChild(jsElm);
+  document.head.appendChild(jsElm);
+});//DOMContentLoaded
+
+function poi(){
+
+	//
+	$(document).ready(function() {
+		console.log('document.ready');
+		time = new Date();
+		//
+		poi_ajax();
+		//poi();
+		poi2();
+	});//document).ready
+
+}//poi()
+
+function poi_ajax(){
+  var cc1=0;
+  var cc2=0;
+  $( document ).ajaxStart(function() {
+    //
+  });
+  $(document).ajaxComplete(function(event, xhr, settings ) { // event, xhr, settings
+    cc1++;
+    //console.log( event, xhr, settings  );
+  });
+  $(document).ajaxStop(function() {
+    cc2++;
+  });
+}//poi_ajax()
+//poi_ajax()
+
+
+function poi2(){
+	var qq=$("pre").text();
+	$("pre").html("<b>讀取測試</b>");
+	qq=qq.split("\n");
+	qq=qq.filter(Boolean);
+	//console.log( qq );
+	for(i=0;i<qq.length;i++){
+		//poi3b(qq[i],i); //ajax處理網址
+	}
+	console.log( 'for loop finish' );
+	poi3(qq,0); //ajax處理網址
+}//poi2()
+//
+function poi3b(in1,in2){  //步進顯示
+	//console.log( in1,in2 );
+	//console.log( 'poi3b' );
+	var url=in1;
+	var index=in2;
+	//
+	//建立個別box
+	var str = '';
+	str = "box" + index;
+	str = '<div id="'+str+'">&emsp;🔰&ensp;'+ index +'</div>';
+	$("#ddd").append( str );
+	//
+	
+		try{
+			var url2 = new URL( url );
+		}
+		catch(err){
+			//解讀網址失敗
+			console.log( err );
+			//poi4(qq,pp);//避免ajax延遲讀取變數
+			return;
+		}
+		finally{}
+
+	//console.log( url2 );
+	var tmp="";
+	tmp=url2.pathname.split("/");
+	//console.log( tmp );
+	if(url2.host == "twitter.com"){
+	}else{
+		console.log("推特網址錯誤1");
+		return;
+	}
+	if(tmp.length<4){
+		console.log("推特網址錯誤2");
+		return;
+	}
+	if(tmp.length>4){
+		url2.pathname=tmp.slice(0,4).join("\/");
+		url=''+url2.href;
+	}
+	//
+	//
+	//console.log( url );
+	poi3b_ajax(url,index);
+	//
+	
+}//poi3b
+//poi3b
+function poi3b_ajax(in1,in2){  //步進顯示
+	//console.log("poi3b_ajax");
+	var url=in1;
+	var index=in2;
+	//
+	var jqxhr =$.ajax({
+	type:     "GET",
+	url:      "https://publish.twitter.com/oembed?url="+url,
+	dataType: "jsonp",
+	data: { name: "John", location: "Boston" },
+	global:  true,
+	beforeSend: function(){
+		//console.log( 'beforeSend' );
+	},
+	success: function(data, textStatus, jqXHR){
+		$("#box"+index ).append( $(data.html)[0] );
+	},
+	error: function(jqXHR, textStatus, errorThrown){},
+	complete:function(data){},
+	});//ajax
+	//
+	jqxhr.done(function(a,b,c){});
+	jqxhr.fail(function(a,b,c){});
+	jqxhr.always(function(a,b,c){});	
+}
+
+
+function poi3(qq,pp){  //步進顯示
+	console.log( pp );
+
+	//建立個別box
+	var str1 = "box"+pp;
+	//var str2 = '<div id="'+str1+'">&emsp;'+pp+'</div>';
+	var str2 = '<div id="'+str1+'">&emsp;🔰&ensp;'+pp+'</div>';
+/*
+&ZeroWidthSpace;
+&zwnj;
+&nbsp;  一般空格
+
+&ensp;  半形空格
+&emsp;  全形空格
+
+https://emojipedia.org/symbols/
+https://developer.wordpress.com/docs/photon/api/
+https://i2.wp.com/pbs.twimg.com/media/EFSeU3yVAAAn1J1.jpg?fit=2048,2048
+
+
+*/
+	$("#ddd").append( str2 );
+	var str3=$("#"+ str1 +"");
+	//console.log( str1,str3 );
+
+	//檢查網址
+	var url=''+qq[pp];
+try{
+	var url2 = new URL(url);
+}
+catch(err){
+	//解讀網址失敗
+	poi4(qq,pp);//避免ajax延遲讀取變數
+	return;
+}
+finally{}	
+	//console.log( url2 );
+	//console.log( url2.pathname );
+	var tmp="";
+	tmp=url2.pathname.split("\/");
+	//console.log( tmp );
+	//console.log( tmp.length );
+	if(url2.host == "twitter.com"){
+		//console.log("twitter.com");
+	}else{
+		//throw "推特網址?";
+		//throw new Error("錯誤error");
+		console.log("推特網址錯誤1");
+		poi4(qq,pp);//避免ajax延遲讀取變數
+		return;
+	}
+	if(tmp.length<4){
+		//throw "推特網址?";
+		console.log("推特網址錯誤2");
+		poi4(qq,pp);//避免ajax延遲讀取變數
+		return;
+	}
+	if(tmp.length>4){
+		tmp=url2.pathname.split("\/");
+		//console.log( tmp.slice(0,4) );
+		url2.pathname=tmp.slice(0,4).join("\/");
+		//console.log( tmp );
+		//console.log( url2.href );
+		url=''+url2.href;
+	}
+	//檢查網址//
+	//取得oembed內容
+	var jqxhr =$.ajax({
+	type:     "GET",
+	url:      "https://publish.twitter.com/oembed?url="+url,
+	dataType: "jsonp",
+	success: function(data){
+		$("#box"+pp ).append( $(data.html)[0] );
+	},
+	error: function(){
+			//your code here
+	},
+	complete:function(data){
+		//console.log( pp,qq.length,qq[pp] );
+		//讀取完 就讀取推特js
+		//ajax裡的東西會延遲執行
+		if(pp<(qq.length-1)){
+			//pp++;
+			//poi3(qq,pp);
+		}else{
+			poi_getjs();//讀取完 就讀取推特js
+		}
+		//
+		
+	},
+	});//ajax
+	
+	
+	jqxhr.done(function(a,b,c){
+		//console.log( a,b,c );
+		//console.log( pp,qq.length,qq[pp] );
+		$("pre").html("<b>("+pp+"/"+qq.length+") "+b+" "+qq[pp]+"</b>");
+		//console.log( 'jqxhr.done' );
+	});
+	jqxhr.fail(function(a,b,c){
+		$("pre").html("<b>("+pp+"/"+qq.length+") 錯誤</b>");
+		//console.log( a,b,c );
+		throw "錯誤error";
+		//throw new Error("錯誤error");
+	});
+	jqxhr.always(function(a,b,c){
+		//總是
+	});
+	
+	
+	//處理下一個
+	if(pp<(qq.length-1)){
+		poi4(qq,pp);//避免ajax延遲讀取變數
+	}else{
+		//poi_getjs();
+	}
+	//
+
+  
+}//poi3
+//poi3
+
+function poi4(qq,pp){ //避免ajax延遲讀取變數
+	pp++;
+	poi3(qq,pp);
+}//poi4()
+//poi4()
+
+
+//function poi0(){}
+
+function poi_getjs(){
+    var jqxhr=$.getScript("https://platform.twitter.com/widgets.js");
+	jqxhr.done(function(){
+    if(0){
+      var id01=document.getElementById('ppp');
+      //var id01=document.getElementsByTagName("pre")[0];
+      id01.insertAdjacentHTML('beforebegin', 'beforebegin');
+      id01.insertAdjacentHTML('afterbegin', 'afterbegin');
+      id01.insertAdjacentHTML('beforeend', 'beforeend');
+      id01.insertAdjacentHTML('afterend', 'afterend');
+      console.log( id01.outerHTML );
+    }else{
+      //$("pre").hide();
+	  $("pre").html("完成"); //清掉了網址
+    }
+    //
+  });
+}//poi_getjs()
+//
+
+
+  
+  
+
+
+
+
+
+
+
+</script>
+
+	</head>
+	<body>
+	
+<pre id="ppp">
+https://twitter.com/kochiqp/status/1192036591092391937
+https://twitter.com/SYPHL1/status/1144182722455199744
+https://twitter.com/raymie0124/status/1192465681695956992
+https://twitter.com/888myrrh888/status/1186669224803962881
+https://twitter.com/888myrrh888/status/1177907592833593344
+https://twitter.com/888myrrh888/status/1174686873664593927
+https://twitter.com/kochiqp/status/1191194054802821121
+https://twitter.com/sino_eefy/status/1192046320594239488
+https://twitter.com/mitokuma/status/1192052579745710080
+https://twitter.com/bookwormU/status/1192471459416834048
+https://twitter.com/krt_nkim/status/1192049356481814528
+https://twitter.com/osakana_p_p/status/1191327223371796482
+https://twitter.com/ko_alupaka_nvl/status/1169907984379432963
+https://twitter.com/ko_alupaka_nvl/status/1192007147753627648
+https://twitter.com/_ShinH/status/1186327263031115777
+https://twitter.com/knr_am/status/1186764240247386112
+https://twitter.com/kasa_7/status/1186979826277609472
+https://twitter.com/sacraneco/status/1182193942332227584
+https://twitter.com/shiraho65/status/1103912736566591489
+https://twitter.com/shima1709/status/1192815072772599809
+https://twitter.com/shiraho65/status/1101633974290415617
+https://twitter.com/MayoG_i/status/1192987050082848769
+
+
+</pre>
+
+<div id="ddd"></div>
+
+
+	</body>
+</html>
