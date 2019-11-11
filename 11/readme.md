@@ -29,3 +29,7 @@ https://wotupset.github.io/2019/11/
   + https://wotupset.github.io/2019/11/10/video.htm 
   + https://wotupset.github.io/2019/11/10/twitter.htm  
   + https://wotupset.github.io/2019/11/10/image.htm 
++ 11 更新twitter.htm 現在能排除重複網址
+  + https://wotupset.github.io/2019/11/10/video.htm 
+  + https://wotupset.github.io/2019/11/10/twitter.htm
+  + https://wotupset.github.io/2019/11/10/image.htm 
