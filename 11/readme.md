@@ -48,3 +48,7 @@ https://wotupset.github.io/2019/11/
 + 19
   + https://wotupset.github.io/2019/11/19/video.htm 
   + https://wotupset.github.io/2019/11/19/twitter.htm
++ 21 twitter.htm現在能跳過非網址的字串
+  + https://wotupset.github.io/2019/11/17/video.htm 
+  + https://wotupset.github.io/2019/11/17/twitter.htm
+  + https://wotupset.github.io/2019/11/17/image.htm 
