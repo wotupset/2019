@@ -52,3 +52,7 @@ https://wotupset.github.io/2019/11/
   + https://wotupset.github.io/2019/11/21/video.htm 
   + https://wotupset.github.io/2019/11/21/twitter.htm
   + https://wotupset.github.io/2019/11/21/image.htm 
++ 23 twitter.htm 現在個別區塊會獨立運作
+  + https://wotupset.github.io/2019/11/23/video.htm 
+  + https://wotupset.github.io/2019/11/23/twitter.htm
+  + https://wotupset.github.io/2019/11/23/image.htm 
