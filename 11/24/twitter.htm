@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title</title>
+<meta charset="UTF-8" />
+<style>
+body{
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  console.log( 'DOMContentLoaded' );
+  var jsElm = document.createElement("script");
+  jsElm.type = "application/javascript";
+  jsElm.src = 'https://code.jquery.com/jquery-3.3.1.min.js';
+  jsElm.onload = function(e){
+    console.log('jsElm.onload');
+	//id01.insertAdjacentHTML('afterbegin', 'jquery讀取成功');
+	poi();
+  };
+  //document.body.appendChild(jsElm);
+  document.head.appendChild(jsElm);
+});//DOMContentLoaded
+
+function poi(){
+
+	//
+	$(document).ready(function() {
+		console.log('document.ready');
+		time = new Date();
+		//
+		poi_ajax();
+		//poi();
+		poi2();
+	});//document).ready
+
+}//poi()
+
+function poi_ajax(){ //沒用到
+  var cc=0;
+  var cc2=0;
+  $( document ).ajaxStart(function() {
+    console.log( 'ajaxStart' );
+  });
+  $(document).ajaxComplete(function(event, xhr, settings ) { // event, xhr, settings
+    console.log( 'ajaxComplete' );
+  });
+  $(document).ajaxStop(function() {
+    console.log( 'ajaxStop' );
+	//
+	if( $('blockquote.twitter-tweet').length > 0 ){
+		console.log( 'twitter的api' );
+		if(cc ==0){
+			console.log( 'twitter的api 2' );
+			cc++;
+			poi_getjs();
+		}else{
+			console.log( '什麼都不執行' );
+		}
+	}
+  });
+  $(document).ajaxError(function() {
+    console.log( 'ajaxError' );
+  });
+  
+  
+}//poi_ajax()
+//poi_ajax()
+
+
+function poi2(){
+	var qq=$("pre").text();
+	$("pre").html("<b>讀取測試</b>");
+	qq=qq.replace(/\r\n/g, "\n");
+	qq=qq.split("\n");
+	qq=qq.filter(Boolean);
+	//console.log( qq );
+	var url_id=[];
+	var url_array=[];
+	for(i=0;i<qq.length;i++){
+		//console.log( qq[i] );
+		var aa=poi2b( qq[i] ); //檢查網址
+		//console.log( aa ); //收到的回傳值
+		if(url_id.includes( aa[1] )){
+			//有=重複
+			console.log( '重複id',aa[1] );
+		}else{
+			//無=新的
+			if( aa[1] == '跳過' ){
+				//跳過
+				console.log( aa ); 
+			}else{
+				url_id.push( aa[1] );//收集id
+				url_array.push( aa[0] );//收集url
+			}
+		}
+	}
+	//console.log( url_array );
+	//console.log( url_id );
+	//console.log( 'for loop finish' );
+	//poi3(qq,0); //ajax處理網址
+	for(i=0; i< url_id.length; i++){
+		poi3(url_array,i); //ajax處理網址
+	}
+}//poi2()
+//
+function poi2b(in1){//檢查網址
+	//console.log( in1 );//網址
+	var url= in1;
+	//
+	if( url.trim().length >0 ){
+		//y
+		//包含字串
+	}else{
+		//n
+		cc++;
+	}
+	
+	//
+	var cc=0;
+	var chk=url.includes("twitter.com");
+	if(chk){
+		//y
+		//網址要包含twitter.com
+	}else{
+		//n
+		cc++;
+	}
+	//
+	var re = /status\/([0-9]{15,20})/;
+	var res = url.match(re);
+	//console.log( res );
+	if(res){
+		//y
+		//網址要包含一串數字
+	}else{
+		//n
+		cc++;
+	}
+	//
+	if(cc>0){
+		//驗證失敗
+		url=''+url; //不改變
+		id='跳過'; //id
+	}else{
+		//url="https://twitter.com/i/status/"+res[1];
+		url=''+url; //不改變
+		id=res[1]; //id
+	}
+	//
+	var x=[];
+	x[0]=url;
+	x[1]=id;
+	return x;
+	
+}//poi2b()
+//poi2b()
+
+function poi3( url_array,url_count ){  //步進顯示
+	//let url_array=url_array;
+	//let url_count=url_count;
+	//
+	//console.log( url_array[url_count] );
+
+	//建立個別box
+	var str1 = "box"+url_count;
+	//var str2 = '<div id="'+str1+'">&emsp;'+pp+'</div>';
+	//var str2 = '<div id="'+str1+'">&emsp;🔰&ensp;'+qq[pp]+'</div>';
+	var str2 = '<div id="'+str1+'">&emsp;🔰&ensp;'+url_count+'</div>';
+/*
+&ZeroWidthSpace;
+&zwnj;
+&nbsp;  一般空格
+
+&ensp;  半形空格
+&emsp;  全形空格
+
+https://emojipedia.org/symbols/
+https://developer.wordpress.com/docs/photon/api/
+https://i2.wp.com/pbs.twimg.com/media/EFSeU3yVAAAn1J1.jpg?fit=2048,2048
+
+
+*/
+	$("#ddd").append( str2 );
+	var str3=$("#"+ str1 +"");
+	//console.log( str1,str3 );
+
+	//檢查網址
+	if( url_array[url_count] ){
+		var url='' + url_array[url_count];
+	}else{
+		console.log( '不存在網址1', url_array[url_count] );
+		//throw "錯誤error";
+		//poi4(url_array,url_count);//避免ajax延遲讀取變數
+		//return;
+	}
+	if( url.length >0 ){
+		//console.log(  );
+	}else{
+		console.log( '空字串' );
+		//console.log( url2 );
+	}
+//////
+
+try{
+	var url2 = new URL(url);
+	//console.log( url2 );
+}
+catch(err){
+	//解讀網址失敗
+	console.log( '解讀網址失敗2',url );
+	//throw "錯誤error";
+	//失敗就進行下一個
+	//poi4(url_array,url_count);//避免ajax延遲讀取變數
+	//return;
+}
+finally{}	
+//////
+	//console.log( url2 );
+	//console.log( url2.pathname );
+	
+	
+	
+	
+	//檢查網址//
+	//取得oembed內容
+	var jqxhr =$.ajax({
+	type:     "GET",
+	url:      "https://publish.twitter.com/oembed?url="+url,
+	dataType: "jsonp",
+	success: function(data,status,jqxhr){
+		//console.log( data,status,jqxhr );
+		$("#box"+url_count ).append( $(data.html)[0] );
+		//$("pre").html("<b>("+pp+"/"+qq.length+") "+ status +" "+qq[pp]+"</b>");
+	},
+	error: function(){
+			//your code here
+	},
+	complete:function(data,status,jqxhr){
+		//console.log( pp,qq.length,qq[pp] );
+		//console.log( $('.twitter-tweet').length , url_array.length );
+		//讀取完 就讀取推特js
+		//ajax裡的東西會延遲執行
+		//url_array,url_count
+		if( url_array.length == $('blockquote.twitter-tweet').length ){
+			//發生錯誤會造成數量不同
+			//poi_getjs();//讀取完 就讀取推特js
+		}else{
+		}
+		if( url_count < (url_array.length-1)){
+			//pp++;
+			//poi3(qq,pp);
+		}else{
+			//poi_getjs();//讀取完 就讀取推特js
+		}
+		//
+		
+	},
+	});//ajax
+	
+	
+	jqxhr.done(function(a,b,c){//data,status,jqxhr
+		//console.log( a,b,c );
+		//console.log( pp,qq.length,qq[pp] );
+		$("pre").html("<b>("+url_count+"/"+url_array.length+") "+b+" "+url_array[url_count]+"</b>"); //較慢
+		//console.log( 'jqxhr.done' );
+	});
+	jqxhr.fail(function(a,b,c){ //jqXHR, textStatus, errorThrown
+		$("pre").html("<b>("+url_count+"/"+url_array.length+") 錯誤</b>");
+		$("#box"+url_count ).append( '錯誤' );
+		console.log( "錯誤error",a.status,url );
+		if( a.status == '404' ){
+			console.log( "這個推特不存在" );
+		}else{
+			console.log( "???" );
+		}
+		//console.log( a,b,c );
+		//throw "錯誤error";
+		//throw new Error("錯誤error");
+	});
+	jqxhr.always(function(a,b,c){
+		//總是
+	});
+	
+	
+	//處理下一個
+	if(url_count < (url_array.length-1)){
+		//poi4( url_array,url_count );//避免ajax延遲讀取變數
+	}else{
+		//poi_getjs();
+	}
+	//
+
+  
+}//poi3
+//poi3
+
+function poi4( url_array,url_count ){ //避免ajax延遲讀取變數 //不使用了
+	url_count++;
+	//let url_array=url_array;
+	//let url_count=url_count;
+	//console.log( 'url_count',url_count );
+	if( url_count < url_array.length ){
+		poi3( url_array, url_count );//避免ajax延遲讀取變數
+	}else{
+		//poi_getjs();
+	}
+	//
+	//poi3(qq,pp);
+}//poi4()
+//poi4()
+
+
+//function poi0(){}
+
+function poi_getjs(){
+    var jqxhr=$.getScript("https://platform.twitter.com/widgets.js");
+	jqxhr.done(function(){
+    if(0){
+      var id01=document.getElementById('ppp');
+      //var id01=document.getElementsByTagName("pre")[0];
+      id01.insertAdjacentHTML('beforebegin', 'beforebegin');
+      id01.insertAdjacentHTML('afterbegin', 'afterbegin');
+      id01.insertAdjacentHTML('beforeend', 'beforeend');
+      id01.insertAdjacentHTML('afterend', 'afterend');
+      //console.log( id01.outerHTML );
+    }else{
+      //$("pre").hide();
+	  $("pre").html("完成"); //清掉了網址
+    }
+    //
+  });
+}//poi_getjs()
+//
+
+
+  
+  
+
+
+
+
+
+
+
+</script>
+
+	</head>
+	<body>
+	
+<pre id="ppp">
+
+https://twitter.com/lobelobe01011/status/1197155432206196736
+https://twitter.com/ipuusan/status/1197474562704674816
+https://twitter.com/nyakocha/status/1194601226114961411
+https://twitter.com/nyakocha/status/1196364424321191938
+https://twitter.com/usaribo/status/1197141706518360065
+aaa
+https://twitter.com/asnaronna/status/1165283765368672256
+https://twitter.com/mitokuma/status/1197478148071292928
+https://twitter.com/nico0510/status/1188650790174412801
+https://twitter.com/yamoyamo18/status/1067069212969988098
+https://twitter.com/peppedayo_ne/status/1197160435566297090
+https://twitter.com/pphmKo98/status/1197842194603876353
+https://twitter.com/wtosh_/status/1197653614392729602
+https://twitter.com/totakeke___/status/1197802659324973056
+https://twitter.com/chan_pani_/status/1180693506374787072
+https://twitter.com/yaosera/status/1197881958954500097
+https://twitter.com/digimon215/status/1197846109659418632
+https://twitter.com/mg1live/status/1197897910622420992
+https://twitter.com/gcmzi/status/1197816140224815104
+https://twitter.com/foosoo_info/status/1197818303005069314
+https://twitter.com/Ixy/status/1197892846096793601
+https://twitter.com/yukkieeeeeen/status/1197855081573470208
+https://twitter.com/rurudo_/status/1197882687035338752
+https://twitter.com/E___KH/status/1197471565123735552
+https://twitter.com/knr_am/status/1197856992343117825
+https://twitter.com/akinosora0726/status/727027453621768192
+https://twitter.com/kochiqp/status/1197836588794822657
+https://twitter.com/_uwaaaaaaaaa/status/1197871914729033728
+https://twitter.com/kochiqp/status/1193845172452245505
+https://twitter.com/ree_kkr/status/1197479535400194049
+https://twitter.com/aikawaryou_12/status/1171379362639175680
+https://twitter.com/minoha/status/966999393088897024
+https://twitter.com/raita_z/status/1189812060864970752
+https://twitter.com/dndmgpgpd2/status/1198084571335516160
+https://twitter.com/ddal_kr/status/1195998480046514177
+https://twitter.com/Kaedeko111/status/1198106400229953537
+https://twitter.com/kaedeko111/status/1198106400229953537
+https://twitter.com/sola_no_crayon/status/1103250140658249729
+https://twitter.com/tkhenpkn/status/1197786680008134656
+https://twitter.com/amainezumi/status/1198092333260009472
+https://twitter.com/dobudouhu_/status/1197791258061619200
+https://twitter.com/amainezumi/status/1149225459688726528
+https://twitter.com/amainezumi/status/1144396933152120832
+https://twitter.com/falcon46141703/status/1186842545029955584
+https://twitter.com/mame_denkyuu/status/1100137923750518784
+https://twitter.com/nprmtp/status/1103003763587997697
+https://twitter.com/mosh_mallow/status/1104382060557266949
+https://twitter.com/nprmtp/status/1198155542725681152
+https://twitter.com/poke_Yr_18/status/1197927461062733825
+https://twitter.com/sazaemu/status/1195960301012713472
+https://twitter.com/oftn_sya/status/1197825842799267840
+https://twitter.com/UniDON1500en/status/1197901338408939520
+https://twitter.com/AC______/status/1198172262844682241
+https://twitter.com/jimmy_madomagi/status/1198169588866748416
+https://twitter.com/momoco_haru/status/1198170761506111488
+https://twitter.com/mofunamako/status/1197999192762798082
+https://twitter.com/momoco_haru/status/1191310314781855745
+https://twitter.com/waaasabi610/status/1197813861740494848
+https://twitter.com/momoco_haru/status/1181423420208058368
+https://twitter.com/mizinko_desu/status/1190106465383542784
+https://twitter.com/DeabanNero/status/1197091498581356544
+https://twitter.com/anko_akagi/status/1196295299511144448
+https://twitter.com/ex_cabbage/status/1197780841851523072
+https://twitter.com/99chocolove99/status/1160229201741398017
+https://twitter.com/99chocolove99/status/1089378617291751425
+https://twitter.com/99chocolove99/status/1182671834212372482
+https://twitter.com/99chocolove99/status/1150062795364286469
+https://twitter.com/nero_viola/status/1121250213157425153
+https://twitter.com/chorimokki/status/1198186454028963842
+https://twitter.com/shirofox/status/1197321364077604864
+https://twitter.com/shONe_Banana/status/1198237524411310081
+https://twitter.com/karoti_/status/1195638700815708160
+https://twitter.com/EddieHanTaiwan/status/1197966690119610369
+https://twitter.com/gum_53/status/1197515052611301376
+https://twitter.com/ermame26/status/1197964018905862145
+https://twitter.com/kizibato123go/status/1198164869641465856
+https://twitter.com/jamesghio/status/1198115327520968706
+https://twitter.com/lu_cid_sky/status/1198021398712717313
+https://twitter.com/czen__6/status/1198244939169009664
+https://twitter.com/popottiee/status/1196452453031374848
+https://twitter.com/NanalynWC/status/1198280952478220289
+https://twitter.com/pizzasi7/status/1198449198967844864
+https://twitter.com/arakune_/status/1197504463168081920
+https://twitter.com/seorang_SR/status/1198224303084302338
+https://twitter.com/piche9468/status/1198520086400622593
+https://twitter.com/piche9468/status/1198520352365694976
+https://twitter.com/yaponishi/status/1194943870347333638
+https://twitter.com/umeboshimaro/status/1198219262793371649
+https://twitter.com/0e_co0/status/1198123733140983808
+https://twitter.com/Kokuin250/status/1198172008632090624
+https://twitter.com/gogoborunga/status/1197839677312487424
+https://twitter.com/gogoborunga/status/1195306942324826112
+https://twitter.com/Haku1923/status/1198577667206987777
+
+</pre>
+
+<div id="ddd"></div>
+
+
+	</body>
+</html>
