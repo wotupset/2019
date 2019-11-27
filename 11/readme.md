@@ -64,3 +64,7 @@ https://wotupset.github.io/2019/11/
   + https://wotupset.github.io/2019/11/26/video.htm 
   + https://wotupset.github.io/2019/11/26/twitter.htm
   + https://wotupset.github.io/2019/11/26/image.htm 
++ 27 twitter.htm測試MutationObserver api
+  + https://wotupset.github.io/2019/11/27/video.htm 
+  + https://wotupset.github.io/2019/11/27/twitter.htm
+  + https://wotupset.github.io/2019/11/27/image.htm 
