@@ -329,7 +329,7 @@ function poi_getjs(){
 	var jqxhr=$.ajax({
 		url: url,
 		type: 'get',
-		//dataType: "script", //設定成script 就不會傳給success handler //onprogress也沒反應
+		dataType: "script", //設定成script 就不會傳給success handler //onprogress也沒反應
 		cache: true, //啟用暫存設定
         global:false, //不觸發global事件
 		
@@ -360,12 +360,20 @@ function poi_getjs(){
 	jqxhr.done(function(a,b,c){//data,status,jqxhr
 		console.log( 'jqxhr.done' );
 		//console.log( a,b,c );
+/*
 		var blob = new Blob([a],{type: 'text/javascript'});
 		console.log( blob );
 		var url = window.URL.createObjectURL(blob);
 		console.log( url );
 		//var url2=url
-		$.getScript( url ); //Not allowed to load local resource:
+		$.getScript( url,function(e){
+			console.log("getScript callback");
+		}); 
+		//Not allowed to load local resource:
+		window.URL.revokeObjectURL(url); //
+		console.log( url );
+
+*/
 		
 		if(0){
 		  var id01=document.getElementById('ppp');
@@ -396,7 +404,7 @@ Mutation Observer API 用来监视 DOM 变动。DOM 的任何变动，比如节�
 
 	const observer = new MutationObserver(function(mutations, observer){
 		mutations.forEach(function(mutation) {
-			//console.log(mutation); //列舉變動
+			console.log(mutation); //列舉變動
 		});	
 	});
 	//var article = document.querySelector('div');
