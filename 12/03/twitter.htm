@@ -322,6 +322,9 @@ function poi4( url_array,url_count ){ //避免ajax延遲讀取變數 //不使用
 
 function poi_getjs(){
 	console.log( 'poi_getjs()' );
+	//
+	poi_191127(); //檢查元素變動
+	//
     //var jqxhr=$.getScript("https://platform.twitter.com/widgets.js");
 	var url='https://platform.twitter.com/widgets.js';
 	//var url='http://ram.komica2.net/00/src/1575395734604.jpg';
@@ -336,7 +339,7 @@ function poi_getjs(){
 		//
 		xhrFields: {
 			onprogress: function(event){
-				console.log('這是xhrFields',event ); //xhrFields優先顯示
+				console.log('這是xhrFields',event ); //xhrFields優先顯示 //沒有收到total 不能做進度條
 			},
 		},
 		//
@@ -359,43 +362,61 @@ function poi_getjs(){
 	
 	jqxhr.done(function(a,b,c){//data,status,jqxhr
 		console.log( 'jqxhr.done' );
-		//console.log( a,b,c );
+		$("pre").html("完成"); //清掉了網址
+		//poi_191204(a); //dataType設定成script 就不用手動載入script
 /*
-		var blob = new Blob([a],{type: 'text/javascript'});
-		console.log( blob );
-		var url = window.URL.createObjectURL(blob);
-		console.log( url );
 		//var url2=url
 		$.getScript( url,function(e){
-			console.log("getScript callback");
+			console.log("getScript callback"); //getScript不接受blob
 		}); 
 		//Not allowed to load local resource:
-		window.URL.revokeObjectURL(url); //
-		console.log( url );
 
 */
 		
-		if(0){
-		  var id01=document.getElementById('ppp');
-		  //var id01=document.getElementsByTagName("pre")[0];
-		  id01.insertAdjacentHTML('beforebegin', 'beforebegin');
-		  id01.insertAdjacentHTML('afterbegin', 'afterbegin');
-		  id01.insertAdjacentHTML('beforeend', 'beforeend');
-		  id01.insertAdjacentHTML('afterend', 'afterend');
-		  //console.log( id01.outerHTML );
-		}else{
-		  //$("pre").hide();
-		  //var aa=$('div');
-		  var aa=$('blockquote.twitter-tweet');
-		  //console.log( aa );
-		  poi_191127();
-		  $("pre").html("完成"); //清掉了網址
-		}
+
     //
   });
 }//poi_getjs()
 //
+function poi_191204(in1){
+	console.log( 'poi_191204' );
+	var a = in1;
+	//
+	var blob = new Blob([a],{type: 'text/javascript'});
+	//console.log( blob );
+	var url = window.URL.createObjectURL(blob);
+	console.log( url );
+	var box = $('<script/>',{id: 'js_191204',});
+	//console.log( box );
+	$("pre").after( box ); //增加新元素
+	box = $('#js_191204');
+	console.log( box );
 
+	box.attr('src',url); //載入了js
+	console.log( box );
+	
+	window.URL.revokeObjectURL(url); //解除blob url
+	console.log( url );
+
+
+	if(0){
+		var id01=document.getElementById('ppp');
+		//var id01=document.getElementsByTagName("pre")[0];
+		id01.insertAdjacentHTML('beforebegin', 'beforebegin');
+		id01.insertAdjacentHTML('afterbegin', 'afterbegin');
+		id01.insertAdjacentHTML('beforeend', 'beforeend');
+		id01.insertAdjacentHTML('afterend', 'afterend');
+		//console.log( id01.outerHTML );
+	}else{
+		//$("pre").hide();
+		//var aa=$('div');
+		//var aa=$('blockquote.twitter-tweet');
+		//console.log( aa );
+		//poi_191127();
+		//$("pre").html("完成"); //清掉了網址
+	}
+}//poi_191204()
+//poi_191204()
 function poi_191127(){
 /*
 https://wangdoc.com/javascript/dom/mutationobserver.html
@@ -407,8 +428,8 @@ Mutation Observer API 用来监视 DOM 变动。DOM 的任何变动，比如节�
 			console.log(mutation); //列舉變動
 		});	
 	});
-	//var article = document.querySelector('div');
-	var article = document;
+	var article = document.querySelector('div');
+	//var article = document; //整個網頁
 	
 	var options = {
 	  'attributes':true,
