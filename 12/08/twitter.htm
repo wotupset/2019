@@ -46,7 +46,7 @@ function poi_ajax(){ //沒用到
   $(document).ajaxComplete(function(event, xhr, settings ) { // event, xhr, settings
     cc2++;
     console.log( 'ajaxComplete' );
-    console.log( event, xhr, settings );
+    //console.log( event, xhr, settings );
 	//settings.url
 	//
 	$("pre").html("<b>("+cc2+") "+ xhr.responseJSON.url +"</b>"); //較慢
@@ -274,7 +274,7 @@ finally{}
 		//console.log( 'jqxhr.done' );
 	});
 	jqxhr.fail(function(a,b,c){ //jqXHR, textStatus, errorThrown
-		console.log( a,b,c );
+		//console.log( a,b,c );
 		$("pre").html("<b>("+url_count+"/"+url_array.length+") 錯誤</b>");
 		$("#box"+url_count ).append( '錯誤' );
 		console.log( "錯誤error",a.status,url );
