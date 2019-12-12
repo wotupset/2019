@@ -285,7 +285,7 @@ finally{}
 	jqxhr.fail(function( jqXHR, textStatus, errorThrown ){ //jqXHR, textStatus, errorThrown
 		//console.log( a,b,c );
 		//$("pre").html("<b>("+url_count+"/"+url_array.length+") 錯誤</b>");
-		$("#box"+url_count ).append( '錯誤2' );
+		$("#box"+url_count ).append( '錯誤' + jqXHR.status );
 		console.log( "錯誤error", jqXHR.status,url );
 		if( jqXHR.status == '404' ){
 			console.log( "這個推特不存在" );
@@ -471,36 +471,41 @@ Mutation Observer API 用来监视 DOM 变动。DOM 的任何变动，比如节�
 	<body>
 	
 <pre id="ppp">
-https://twitter.com/marekamico/status/1201425252019924993
-https://twitter.com/ganecooo/status/1193488011062730753
-https://twitter.com/min_taroo/status/1203688074812653568
-https://twitter.com/jeonghee1414/status/1203642265534488577
-https://twitter.com/kinutani_yutaka/status/1203991720540508160
-https://twitter.com/momoco_haru/status/1203961492116099077
-https://twitter.com/nonllqivip/status/1203706052669104128
-https://twitter.com/_by4co/status/1203670850383147008
-https://twitter.com/pinksan3232/status/1203993629376708608
-https://twitter.com/rasra25/status/1204004880223887362
-https://twitter.com/92m/status/1204034434787266562
-https://twitter.com/rasra25/status/1202205181665890309
-https://twitter.com/shiina_2256/status/1197081861635244032
-https://twitter.com/mob_oji_katu/status/1203686180509773825
-https://twitter.com/yuzunonicomi/status/1203264246525489154
-https://twitter.com/pfeasy/status/1203809061105307648
-https://twitter.com/JojiOji3/status/1194296733494214656
-https://twitter.com/ixy/status/1194996290079182849
-https://twitter.com/bokkun168/status/1204192514724388864
-https://twitter.com/subachi/status/1203987136422113283
-https://twitter.com/K1B0_1/status/1203684141612642308
-https://twitter.com/ke_ta_gekidoku/status/1198158695466557440
-https://twitter.com/ke_ta_gekidoku/status/1198136912344563713
-https://twitter.com/ke_ta_gekidoku/status/1204267918675992576
-https://twitter.com/KatouEgao/status/1204154682748354561
-https://twitter.com/KatouEgao/status/1204152964010651648
-https://twitter.com/KatouEgao/status/1204151062472605698
-https://twitter.com/KatouEgao/status/1203432229906657280
-https://twitter.com/KatouEgao/status/1203430488712663044
+
+https://twitter.com/shnva06ka/status/1199975266296066050
+https://twitter.com/sakurapion/status/1203960861007572992
 https://twitter.com/snba_szme/status/1204096120600686593
+https://twitter.com/KatouEgao/status/1202726681489944576
+https://twitter.com/aengdohwa/status/1204316748696018945
+https://twitter.com/si1_1me/status/1204024757714243588
+https://twitter.com/kedamaa/status/1203643891284500483
+https://twitter.com/miai850172850/status/1187705636580032513
+https://twitter.com/BARD713/status/1204337266002296832
+https://twitter.com/kokuyouseki/status/1204322877513666563
+https://twitter.com/teranekos/status/1204339689638912000
+https://twitter.com/nanamomorio/status/1204343765537714176
+https://twitter.com/_ILMNSP_/status/1202920146752266240
+https://twitter.com/ana_ame0/status/1204403545740476420
+https://twitter.com/sakula_yuki/status/1204399873807663104
+https://twitter.com/mg1live/status/1204411084536303616
+https://twitter.com/sengoku_aky/status/1204339024992714752
+https://twitter.com/motimotica/status/1204101467713331200
+https://twitter.com/bacumenT/status/1204511504017395712
+https://twitter.com/irreboot/status/1204495755970564097
+https://twitter.com/eheh_dl/status/1204066794064842752
+https://twitter.com/MotsuniP/status/1203591190236422146
+https://twitter.com/jojioji3/status/1203788261878988800
+https://twitter.com/mdxu/status/1204598305998553088
+https://twitter.com/nagato514/status/1203245493477724160
+https://twitter.com/chorimokki/status/1204709232437690368
+https://twitter.com/blade4649/status/1203745156391829504
+https://twitter.com/satsuki_yukimi/status/1204754987823202304
+https://twitter.com/__KFR/status/1204731023172362240
+https://twitter.com/neko_cer/status/1203996333280911361
+https://twitter.com/rasra25/status/1202225217231187968
+https://twitter.com/umeboshimaro/status/1187347117976645633
+https://twitter.com/tomekitigai/status/1204994991338057728
+
 
 
 </pre>
