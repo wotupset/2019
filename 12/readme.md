@@ -36,3 +36,7 @@ https://wotupset.github.io/2019/12/
 + 15 twitter.htm現在使用時間排序
   + https://wotupset.github.io/2019/12/15/twitter.htm  
   + https://wotupset.github.io/2019/12/15/image.htm 
++ 16
+  + https://wotupset.github.io/2019/12/16/video.htm 
+  + https://wotupset.github.io/2019/12/16/twitter.htm  
+  + https://wotupset.github.io/2019/12/16/image.htm 
