@@ -52,3 +52,7 @@ https://wotupset.github.io/2019/12/
   + https://wotupset.github.io/2019/12/22/video.htm 
   + https://wotupset.github.io/2019/12/22/twitter.htm  
   + https://wotupset.github.io/2019/12/22/image.htm 
++ 23
+  + https://wotupset.github.io/2019/12/23/video.htm 
+  + https://wotupset.github.io/2019/12/23/twitter.htm  
+  + https://wotupset.github.io/2019/12/23/image.htm 
